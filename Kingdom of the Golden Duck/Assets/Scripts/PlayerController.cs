@@ -7,17 +7,22 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 3.4f;
-    public float jumpHeight = 6.5f;
-    public Camera mainCamera;
+    
+    /*public Camera mainCamera;
     bool facingRight = true;
     float moveDirection = 0;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+    */
 
-    bool gameStart = true;
+    //bool gameStart = true;
+    bool onWater;
+    bool underWater;
+    public float hzBound = 10;
+    public float vtBound = 5;
+
 
     // Start is called before the first frame update
     
@@ -25,16 +30,17 @@ public class PlayerController : MonoBehaviour
     //[Tooltip("The Y velocity set when the player jumps.  Changing the gravity scale on Rigidbody2D, to something like 3 to 4, can help to make this feel more snappy.")]
     public float jumpSpeed;
     //[Tooltip("Number of times the player can jump.")]
-    public int jumps;
+    //public int jumps;
     //[Range(0, 0.8f), Tooltip("How quickly the player slows down while not moving.  Works better if the player has a zero friction physics material.")]
     public float drag;
     //[Range(0, 0.8f), Tooltip("How quickly the player speeds up to their desired velocity after pressing a key bind.  Works better if the player has a zero friction physics material.")]
     public float acceleration;
 
-    [Header("Keybindings"), Space(10)]
+    //[Header("Keybindings"), Space(10)]
     public KeyCode jumpKey;
     public KeyCode moveLeftKey;
     public KeyCode moveRightKey;
+    public KeyCode diveKey;
 
     Rigidbody2D rb;
     SpriteRenderer spr;
@@ -47,47 +53,56 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
 
-        editorValueJumps = jumps;
         rb.angularDrag = 0;
     }
 
     void Update()
     {
-        if (Input.GetKey(moveLeftKey))
+        if (Input.GetKey(moveLeftKey) && (transform.position.x > -hzBound))
         {
             Vector2 vel = rb.velocity;
             vel.x = Mathf.Lerp(vel.x, -moveSpeed, acceleration);
             rb.velocity = vel;
         }
-        else if (Input.GetKey(moveRightKey))
+        else if (Input.GetKey(moveRightKey) && (transform.position.x < hzBound))
         {
             Vector2 vel = rb.velocity;
             vel.x = Mathf.Lerp(vel.x, moveSpeed, acceleration);
             rb.velocity = vel;
         }
-        else if (!Input.GetKey(moveLeftKey) && !Input.GetKey(moveRightKey))
+        else if (!Input.GetKey(moveLeftKey) && !Input.GetKey(moveRightKey) || (transform.position.x > hzBound) || (transform.position.x < -hzBound))
         {
             Vector2 vel = rb.velocity;
             vel.x = Mathf.Lerp(vel.x, 0, drag);
             rb.velocity = vel;
         }
 
-        if (Input.GetKeyDown(jumpKey) && jumps > 0)
+        if (Input.GetKeyDown(jumpKey) && (transform.position.y < vtBound))
         {
             Vector2 vel = rb.velocity;
-            vel.y = jumpSpeed;
+            vel.y = Mathf.Lerp(vel.y, moveSpeed, acceleration);
             rb.velocity = vel;
-
-            jumps -= 1;
+        }
+        else if (Input.GetKeyDown(diveKey) && (transform.position.y > -vtBound))
+        {
+            Vector2 vel = rb.velocity;
+            vel.y = Mathf.Lerp(vel.y, -moveSpeed, acceleration);
+            rb.velocity = vel;
+        }
+         else if (!Input.GetKey(jumpKey) && !Input.GetKey(diveKey) || (transform.position.y > vtBound) || (transform.position.y < -vtBound))
+        {
+            Vector2 vel = rb.velocity;
+            vel.y = Mathf.Lerp(vel.y, 0, drag);
+            rb.velocity = vel;
         }
     }
 
-    public void SetGround(bool groundBool)
+    /*public void SetGround(bool groundBool)
     {
         isGrounded = groundBool;
         if (groundBool == true)
         {
             jumps = editorValueJumps;
         }
-    }
+    }*/
 }
