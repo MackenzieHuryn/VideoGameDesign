@@ -318,6 +318,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &491195777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 491195779}
+  - component: {fileID: 491195778}
+  m_Layer: 0
+  m_Name: Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &491195778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491195777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1aa35e216bd7494cbaaa8a95b4cce5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &491195779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491195777}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.6446123, y: 0.049360774, z: -0.13269266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,6 +544,7 @@ GameObject:
   - component: {fileID: 1388394152}
   - component: {fileID: 1388394155}
   - component: {fileID: 1388394154}
+  - component: {fileID: 1388394156}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -660,3 +705,20 @@ MonoBehaviour:
   moveRightKey: 275
   diveKey: 274
   isGrounded: 0
+--- !u!114 &1388394156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388394149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d842e9de695dd5a499c3e1b8f647bbf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 1388394150}
+  spriteArray:
+  - {fileID: 21300000, guid: 6b6469b441e65a8429748f8299f2e6aa, type: 3}
+  - {fileID: 21300000, guid: b09d17f61af1875428d3e20d35890f25, type: 3}
+  - {fileID: 21300000, guid: 9aec3b15fe430e949bb75e174f5b8a99, type: 3}
