@@ -9,12 +9,9 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 3.4f;
     public float jumpHeight = 6.5f;
-    public float gravityScale = 1.5f;
     public Camera mainCamera;
-
     bool facingRight = true;
     float moveDirection = 0;
-    bool isGrounded = false;
     Vector3 cameraPos;
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
@@ -23,32 +20,74 @@ public class PlayerController : MonoBehaviour
     bool gameStart = true;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        t = transform;
-        r2d = GetComponent<Rigidbody2D>();
-        mainCollider = GetComponent<CapsuleCollider2D>();
-        r2d.freezeRotation = true;
-        r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        r2d.gravityScale = gravityScale;
-        facingRight = t.localScale.x > 0;
+    
+    public float moveSpeed;
+    //[Tooltip("The Y velocity set when the player jumps.  Changing the gravity scale on Rigidbody2D, to something like 3 to 4, can help to make this feel more snappy.")]
+    public float jumpSpeed;
+    //[Tooltip("Number of times the player can jump.")]
+    public int jumps;
+    //[Range(0, 0.8f), Tooltip("How quickly the player slows down while not moving.  Works better if the player has a zero friction physics material.")]
+    public float drag;
+    //[Range(0, 0.8f), Tooltip("How quickly the player speeds up to their desired velocity after pressing a key bind.  Works better if the player has a zero friction physics material.")]
+    public float acceleration;
 
-        if (mainCamera)
+    [Header("Keybindings"), Space(10)]
+    public KeyCode jumpKey;
+    public KeyCode moveLeftKey;
+    public KeyCode moveRightKey;
+
+    Rigidbody2D rb;
+    SpriteRenderer spr;
+    [HideInInspector]
+    public bool isGrounded = false;
+    int editorValueJumps;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        spr = GetComponent<SpriteRenderer>();
+
+        editorValueJumps = jumps;
+        rb.angularDrag = 0;
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(moveLeftKey))
         {
-            cameraPos = mainCamera.transform.position;
+            Vector2 vel = rb.velocity;
+            vel.x = Mathf.Lerp(vel.x, -moveSpeed, acceleration);
+            rb.velocity = vel;
+        }
+        else if (Input.GetKey(moveRightKey))
+        {
+            Vector2 vel = rb.velocity;
+            vel.x = Mathf.Lerp(vel.x, moveSpeed, acceleration);
+            rb.velocity = vel;
+        }
+        else if (!Input.GetKey(moveLeftKey) && !Input.GetKey(moveRightKey))
+        {
+            Vector2 vel = rb.velocity;
+            vel.x = Mathf.Lerp(vel.x, 0, drag);
+            rb.velocity = vel;
+        }
+
+        if (Input.GetKeyDown(jumpKey) && jumps > 0)
+        {
+            Vector2 vel = rb.velocity;
+            vel.y = jumpSpeed;
+            rb.velocity = vel;
+
+            jumps -= 1;
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetGround(bool groundBool)
     {
-        if (gameStart)
+        isGrounded = groundBool;
+        if (groundBool == true)
         {
-            float hzI = Input.GetAxis("Horizontal");
-            r2d.AddForce(transform.position * speed * hzI);
-           
+            jumps = editorValueJumps;
         }
-        
-
     }
 }
