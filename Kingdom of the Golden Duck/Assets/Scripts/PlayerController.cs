@@ -20,9 +20,11 @@ public class PlayerController : MonoBehaviour
     //bool gameStart = true;
     bool onWater;
     bool underWater;
+    bool jumping = false;
     public float hzBound = 10;
     public float vtBound = 5;
-
+    public float waterlineY;
+    public float thrust = 20;
 
     // Start is called before the first frame update
     
@@ -53,11 +55,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
 
-        rb.angularDrag = 0;
+        //rb.angularDrag = 0;
     }
 
     void Update()
     {
+        if(jumping == true && transform.position.y < waterlineY){
+            jumping = false;
+            rb.gravityScale = 0;
+        }
         if (Input.GetKey(moveLeftKey) && (transform.position.x > -hzBound))
         {
             Vector2 vel = rb.velocity;
@@ -79,9 +85,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(jumpKey) && (transform.position.y < vtBound))
         {
-            Vector2 vel = rb.velocity;
-            vel.y = Mathf.Lerp(vel.y, moveSpeed, acceleration);
-            rb.velocity = vel;
+            if(transform. position.y < waterlineY){
+                Vector2 vel = rb.velocity;
+                vel.y = Mathf.Lerp(vel.y, moveSpeed, acceleration);
+                rb.velocity = vel;
+            }
         }
         else if (Input.GetKeyDown(diveKey) && (transform.position.y > -vtBound))
         {
@@ -95,6 +103,14 @@ public class PlayerController : MonoBehaviour
             vel.y = Mathf.Lerp(vel.y, 0, drag);
             rb.velocity = vel;
         }
+        //Add space keycode for jump
+    }
+
+    public void doJump(){
+        jumping = true;
+        rb.gravityScale = 10; // Enable
+        rb.AddForce(transform.up * thrust);
+
     }
 
     /*public void SetGround(bool groundBool)
