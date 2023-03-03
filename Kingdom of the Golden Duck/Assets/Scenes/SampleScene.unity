@@ -215,7 +215,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73675183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -696,8 +696,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hzBound: 10
   vtBound: 5
+  lowBound: -5
   waterlineY: 2
-  thrust: 10
+  thrust: 100
   moveSpeed: 5
   jumpSpeed: 1
   drag: 1
@@ -706,6 +707,7 @@ MonoBehaviour:
   moveLeftKey: 276
   moveRightKey: 275
   diveKey: 274
+  jumpReal: 32
   isGrounded: 0
 --- !u!114 &1388394156
 MonoBehaviour:
