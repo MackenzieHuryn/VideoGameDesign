@@ -7,7 +7,7 @@ public class CoinCounter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        public static int coinCount = 0;
     }
 
     // Update is called once per frame
