@@ -73,36 +73,41 @@ public class PlayerController : MonoBehaviour
             vel.x = Mathf.Lerp(vel.x, -moveSpeed, acceleration);
             rb.velocity = vel;
         }
-        else if (Input.GetKey(moveRightKey) && (transform.position.x < hzBound))
+        if (Input.GetKey(moveRightKey) && (transform.position.x < hzBound))
         {
             Vector2 vel = rb.velocity;
             vel.x = Mathf.Lerp(vel.x, moveSpeed, acceleration);
             rb.velocity = vel;
         }
-        else if (!Input.GetKey(moveLeftKey) && !Input.GetKey(moveRightKey) || (transform.position.x > hzBound) || (transform.position.x < -hzBound))
+        if (!Input.GetKey(moveLeftKey) && !Input.GetKey(moveRightKey) /*|| (transform.position.x > hzBound) || (transform.position.x < -hzBound)*/)
         {
             Vector2 vel = rb.velocity;
             vel.x = Mathf.Lerp(vel.x, 0, drag);
             rb.velocity = vel;
         }
 
-
-        if (Input.GetKeyDown(jumpKey) /*&& (transform.position.y < waterlineY)*/)
+        if (Input.GetKeyDown(jumpKey) && (transform.position.y > waterlineY))
+        {
+                Vector2 vel = rb.velocity;
+                vel.y = Mathf.Lerp(vel.y, 0, drag);
+                rb.velocity = vel;
+        }
+        else if (Input.GetKeyDown(jumpKey))
         {
                 Vector2 vel = rb.velocity;
                 vel.y = Mathf.Lerp(vel.y, moveSpeed, acceleration);
                 rb.velocity = vel;
         }
-        else if (Input.GetKeyDown(diveKey) /*&& (transform.position.y > lowBound)*/)
+        if(jumping = false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY)){
+            doJump();
+        }
+        if (Input.GetKeyDown(diveKey) && (transform.position.y > lowBound))
         {
             Vector2 vel = rb.velocity;
             vel.y = Mathf.Lerp(vel.y, -moveSpeed, acceleration);
             rb.velocity = vel;
         }
-        else if(jumping = false && Input.GetKey(jumpReal)){
-            doJump();
-        }
-        else if ((!Input.GetKey(jumpKey) && !Input.GetKey(diveKey)) || transform.position.y > waterlineY || transform.position.y < lowBound)
+        else if ((!Input.GetKey(jumpKey) && !Input.GetKey(diveKey)))
         {
             Vector2 vel = rb.velocity;
             vel.y = Mathf.Lerp(vel.y, 0, drag);
@@ -111,6 +116,9 @@ public class PlayerController : MonoBehaviour
     }
 
     public void doJump(){
+        Debug.Log("Space");
+        rb.velocity = new Vector3(0, thrust, 0) * Time.deltaTime;
+        //rb.AddForce(transform.postion.y.normalized * thrust);
         jumping = true;
         rb.gravityScale = 100; // Enable
         //rb.AddForce(transform.up * thrust);

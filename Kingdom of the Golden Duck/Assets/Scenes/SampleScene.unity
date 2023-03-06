@@ -291,7 +291,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 0, z: 0, w: 0.1875}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 0.5625}
     newSize: {x: 1, y: 1}
@@ -374,7 +374,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: de981886e9e48764f9bb13a90e859c93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -458,7 +458,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: de981886e9e48764f9bb13a90e859c93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1101,7 +1101,7 @@ MonoBehaviour:
   hzBound: 10
   vtBound: 5
   lowBound: -5
-  waterlineY: 2
+  waterlineY: 0
   thrust: 100
   moveSpeed: 5
   jumpSpeed: 1
