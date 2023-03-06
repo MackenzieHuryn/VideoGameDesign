@@ -898,7 +898,7 @@ MonoBehaviour:
   hzBound: 10
   vtBound: 5
   lowBound: -5
-  waterlineY: 2
+  waterlineY: 0
   thrust: 100
   moveSpeed: 5
   jumpSpeed: 1
