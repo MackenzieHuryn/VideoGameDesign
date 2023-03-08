@@ -899,12 +899,12 @@ MonoBehaviour:
   vtBound: 5
   lowBound: -5
   waterlineY: 0
-  thrust: 100
+  thrust: 1000
   moveSpeed: 5
   jumpSpeed: 1
   drag: 1
   acceleration: 2
-  jumpKey: 273
+  upKey: 273
   moveLeftKey: 276
   moveRightKey: 275
   diveKey: 274
