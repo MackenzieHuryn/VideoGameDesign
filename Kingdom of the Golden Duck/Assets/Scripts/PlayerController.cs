@@ -21,11 +21,13 @@ public class PlayerController : MonoBehaviour
     bool onWater;
     bool underWater;
     bool jumping = false;
-    public float hzBound = 10;
-    public float vtBound = 5;
-    public float lowBound = -5;
+    public float rightBound = 10.0f;
+    public float leftBound = 10.0f;
+    public float upBound = 5.0f;
+    public float lowBound = -5.0f;
     public float waterlineY;
-    public float thrust = 20;
+    public float thrust = 20.0f;
+    public float gravScale = 15.0f;
 
     // Start is called before the first frame update
     
@@ -62,13 +64,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(jumping == true && transform.position.y < waterlineY){
+        if(jumping == true && transform.position.y  < waterlineY){
             jumping = false;
             rb.gravityScale = 0;
+            Vector2 vel = rb.velocity;
+            vel.y = Mathf.Lerp(vel.y, 0, drag);
+            vel.x = Mathf.Lerp(vel.x, 0, drag);
+            rb.velocity = vel;
             //transform.position = new Vector2(transform.position.x, waterlineY);
         }
-        if (transform.position.x < -hzBound){
-            transform.position = new Vector2(-hzBound, transform.position.y);
+        if (transform.position.x < leftBound){
+            transform.position = new Vector2(leftBound, transform.position.y);
         }
         if (Input.GetKey(moveLeftKey))
         {
@@ -76,8 +82,8 @@ public class PlayerController : MonoBehaviour
             vel.x = Mathf.Lerp(vel.x, -moveSpeed, acceleration);
             rb.velocity = vel;
         }
-         if (transform.position.x > hzBound){
-            transform.position = new Vector2(hzBound, transform.position.y);
+         if (transform.position.x > rightBound){
+            transform.position = new Vector2(rightBound, transform.position.y);
         }
         if (Input.GetKey(moveRightKey))
         {
@@ -95,24 +101,23 @@ public class PlayerController : MonoBehaviour
         if (jumping == false && transform.position.y > waterlineY){
             transform.position = new Vector2(transform.position.x, waterlineY);
         }
-        if (jumping == false && Input.GetKeyDown(upKey))
+      
+        if(jumping == false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY - 0.1)){
+            doJump();
+        } else if (jumping == false && Input.GetKeyDown(upKey) && !Input.GetKey(jumpReal) && (transform.position.y <= waterlineY))
         {
                 Vector2 vel = rb.velocity;
                 vel.y = Mathf.Lerp(vel.y, moveSpeed, drag);
                 rb.velocity = vel;
-        }
-      
-        if(jumping == false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY - 0.1)){
-            doJump();
-        }
-        if (transform.position.y < lowBound){
-            transform.position = new Vector2(transform.position.x, lowBound);
-        }
-        if (Input.GetKeyDown(diveKey))
+        }else if (jumping == false && Input.GetKeyDown(diveKey) && !Input.GetKey(jumpReal) && (transform.position.y <= waterlineY))
         {
             Vector2 vel = rb.velocity;
             vel.y = Mathf.Lerp(vel.y, -moveSpeed, acceleration);
             rb.velocity = vel;
+        }
+
+        if (transform.position.y < lowBound){
+            transform.position = new Vector2(transform.position.x, lowBound);
         }
         if ((!Input.GetKey(upKey) && !Input.GetKey(diveKey)))
         {
@@ -123,10 +128,11 @@ public class PlayerController : MonoBehaviour
     }
 
     public void doJump(){
-        Vector3 dirY = transform.up * thrust;
-        rb.AddForce(new Vector2 (0, dirY.y));
+        //Vector3 dirY = transform.up * thrust;
+        //rb.AddForce(new Vector2 (0, dirY.y));
+        transform.Translate(Vector2.up * Time.deltaTime * thrust);
         jumping = true;
-        rb.gravityScale = 10; // Enable gravity
+        rb.gravityScale = gravScale; // Enable gravity
    
     }
 
