@@ -9,6 +9,10 @@ public class EnemyMovement : MonoBehaviour
     private GameObject player;
     private Vector2 spawnPos;
     private GameManager gameManager; 
+    // private bool canFishMove = true;
+
+    // Range of y
+    // private float yFishMax = -1.54f;
     
     // Start is called before the first frame update
     void Start()
@@ -23,11 +27,14 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //if (gameManager.isGameActive) {
-        Vector2 lookDirection = (player.transform.position - transform.position);
-        //enemyRb.AddForce(lookDirection * speed);
-        transform.Translate(lookDirection * speed);
+        
+            Vector2 lookDirection = (player.transform.position - transform.position);
+            //enemyRb.AddForce(lookDirection * speed);
+            transform.Translate(lookDirection * speed);
+         
+        
      //   }
-    }
 
+    }
     
 }
