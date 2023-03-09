@@ -130,9 +130,25 @@ public class PlayerController : MonoBehaviour
     public void doJump(){
         //Vector3 dirY = transform.up * thrust;
         //rb.AddForce(new Vector2 (0, dirY.y));
-        transform.Translate(Vector2.up * Time.deltaTime * thrust);
+        //Vector2 vel = rb.velocity;
+        //transform.Translate(Vector2.up * Time.deltaTime * thrust * 0.5f);
+        //transform.Translate(new Vector2(0.0f, Time.deltaTime * thrust * 0.5f));
+       float timeSinceStarted = 0f;
+        while(true){
+            timeSinceStarted += Time.deltaTime;
+            Vector2 newPos = new Vector2(transform.position.x, transform.position.y + 4);
+            transform.position = Vector2.Lerp(transform.position, newPos, timeSinceStarted);
+            if (transform.position.y >= 4)
+            {
+                break;
+            }
+
+        }
         jumping = true;
         rb.gravityScale = gravScale; // Enable gravity
+        //transform.position = newPos;
+        //transform.position = Vector2.MoveTowards(transform.position, newPos, Time.deltaTime);
+        
    
     }
 
