@@ -12,7 +12,11 @@ public class EnemyMovement : MonoBehaviour
     // private bool canFishMove = true;
 
     // Range of y
-    // private float yFishMax = -1.54f;
+    private float yFishMax = -1.54f;
+    private float leftBound = -8.38f;
+    private float rightBound = 8.68f;
+    private float belowBound = -4.15f;
+
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +31,20 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         //if (gameManager.isGameActive) {
-        
+            if (transform.position.y > yFishMax){
+            transform.position = new Vector2(transform.position.x, yFishMax);
+            }
+            if (transform.position.x > rightBound){
+            transform.position = new Vector2(rightBound, transform.position.y);
+            }
+            if (transform.position.x < leftBound){
+            transform.position = new Vector2(leftBound, transform.position.y);
+            }
+            if (transform.position.y < belowBound){
+            transform.position = new Vector2(transform.position.x, belowBound);
+            }
+            
+
             Vector2 lookDirection = (player.transform.position - transform.position);
             //enemyRb.AddForce(lookDirection * speed);
             transform.Translate(lookDirection * speed);

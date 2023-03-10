@@ -32,7 +32,6 @@ public class PlayerChangeSprite : MonoBehaviour
 
     }
     
-    //NEED TO ADD SYSTEM TO HAVE A SPECIFIC NUMBER SENT INTO THE FUNCTION
     void ChangeSprite(int duckSprite) {
             spriteRenderer.sprite = spriteArray[duckSprite];
     }

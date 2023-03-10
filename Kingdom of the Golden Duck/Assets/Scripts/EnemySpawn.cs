@@ -16,7 +16,7 @@ public class EnemySpawn : MonoBehaviour
     private float spawnTimeInterval = 0.5f;
 
     // Control how many enemies can appear onscreen at a time.
-    private float maxEnemySpawn = 2f;
+    private float maxEnemySpawn = 1f;
     public static float fishSpawned = 0f;
 
     // Range of x
@@ -45,7 +45,7 @@ public class EnemySpawn : MonoBehaviour
         timerX += Time.deltaTime;
         spawnTimeInterval = Random.Range(1f,10f);
 
-        if (timerX >= spawnTimeInterval && fishSpawned < maxEnemySpawn) {
+        if ((timerX >= spawnTimeInterval) && (fishSpawned < maxEnemySpawn)) {
             spawnFish();
             fishSpawned++;
             // Resets timer back to 0
@@ -63,7 +63,7 @@ public class EnemySpawn : MonoBehaviour
     }
 
     void spawnEnemyDucks() {
-    Vector2 pos = new Vector2 ( (xMax + 2f ), 0);
+    Vector2 pos = new Vector2 ( (xMax + 2f ), -0.33f);
     Instantiate(enemyDuckPrefab, pos, enemyDuckPrefab.transform.rotation); 
     }
 }
