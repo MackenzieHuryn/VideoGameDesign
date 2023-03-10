@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
     public float waterlineY;
     public float thrust = 20.0f;
     public float gravScale = 15.0f;
+    public static float lives = 3f;
+    private GameManager gameManager;
+
 
     // Start is called before the first frame update
     
@@ -58,7 +61,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
-
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        lives = 3f;
         //rb.angularDrag = 0;
     }
 
@@ -150,6 +154,17 @@ public class PlayerController : MonoBehaviour
         //transform.position = Vector2.MoveTowards(transform.position, newPos, Time.deltaTime);
         
    
+    }
+
+    //runs this code when the player collides with an enemy
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("Collision");
+        if (collision.gameObject.tag == "Enemy" ){ 
+            // Remove Lives
+            Debug.Log("Life Lost! Lives left:" + lives);
+            lives--;
+        }
+        
     }
 
 }
