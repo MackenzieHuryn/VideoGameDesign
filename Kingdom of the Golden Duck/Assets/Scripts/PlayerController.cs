@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float gravScale = 15.0f;
     public static float lives = 3f;
     private GameManager gameManager;
+    public bool OnPlate = false;
 
 
     // Start is called before the first frame update
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
             vel.x = Mathf.Lerp(vel.x, -moveSpeed, acceleration);
             rb.velocity = vel;
         }
-         if (transform.position.x > rightBound){
+        if (transform.position.x > rightBound){
             transform.position = new Vector2(rightBound, transform.position.y);
         }
         if (Input.GetKey(moveRightKey))
@@ -164,7 +165,26 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Life Lost! Lives left:" + lives);
             lives--;
         }
-        
+        if (collision.gameObject.tag == "Platform" ){ 
+           OnPlate = true;
+           /*if (Input.GetKey(jumpReal)){
+               
+               Debug.Log("PlatformJump");
+               float timeSinceStarted = 0f;
+               float jumpVal = collision.gameObject.transform.position.y + 4;
+               while(true){
+                    timeSinceStarted += Time.deltaTime; 
+                    Vector2 newPos = new Vector2(transform.position.x, jumpVal);
+                    transform.position = Vector2.Lerp(transform.position, newPos, timeSinceStarted);
+                    if (transform.position.y >= jumpVal)
+                    {
+                        break;
+                    }*/
+
+                }
+           }
+        }
     }
+ 
 
 }
