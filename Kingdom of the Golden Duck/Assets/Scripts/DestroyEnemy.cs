@@ -9,9 +9,8 @@ public class DestroyEnemy : MonoBehaviour
         Debug.Log("Collision");
         if (collision.gameObject.tag == "Enemy" ){ 
             // Let the enemy spawn script know it can spawn another enemy
-            if (collision.gameObject.tag == "Enemy"){
-            EnemySpawn.enemiesSpawned--;
-            }
+            EnemySpawn.fishSpawned--;
+            
             // Destroys object it collides with
             Destroy(collision.gameObject);
             // Destroys projectile
