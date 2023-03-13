@@ -1120,6 +1120,7 @@ MonoBehaviour:
   waterlineY: 0
   thrust: 500
   gravScale: 20
+  OnPlate: 0
   moveSpeed: 5
   jumpSpeed: 1
   drag: 1
