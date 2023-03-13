@@ -57,6 +57,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isGrounded = false;
     int editorValueJumps;
+    //private HashSet<GameObject> touching = new HashSet<GameObject>();
 
     void Awake()
     {
@@ -107,7 +108,9 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(transform.position.x, waterlineY);
         }
       
-        if(jumping == false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY - 0.1)){
+        if(OnPlate ==true && Input.GetKey(jumpReal)){
+            doJump();
+        }else if(jumping == false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY - 0.1)){
             doJump();
         } else if (jumping == false && Input.GetKeyDown(upKey) && !Input.GetKey(jumpReal) && (transform.position.y <= waterlineY))
         {
@@ -159,7 +162,7 @@ public class PlayerController : MonoBehaviour
 
     //runs this code when the player collides with an enemy
     private void OnCollisionEnter2D(Collision2D collision) {
-        Debug.Log("Collision");
+        //Debug.Log("Collision");
         if (collision.gameObject.tag == "Enemy" ){ 
             // Remove Lives
             Debug.Log("Life Lost! Lives left:" + lives);
@@ -167,6 +170,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Platform" ){ 
            OnPlate = true;
+           //onPlatform();
            /*if (Input.GetKey(jumpReal)){
                
                Debug.Log("PlatformJump");
@@ -181,9 +185,17 @@ public class PlayerController : MonoBehaviour
                         break;
                     }*/
 
-                }
-           }
         }
+
+     }
+     private void OnCollisionExit2D(Collision2D collision){
+          if (collision.gameObject.tag == "Platform" ){ 
+            OnPlate = false;
+          }
+     }
+     
+
+  }
     
  
 
