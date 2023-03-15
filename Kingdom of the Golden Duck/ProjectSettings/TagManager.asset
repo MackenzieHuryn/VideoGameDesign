@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Coin
   - Background
+  - EnemyFish
   layers:
   - Default
   - TransparentFX

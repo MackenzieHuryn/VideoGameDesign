@@ -11,9 +11,11 @@ public class ButtonManager : MonoBehaviour
     public GameObject UnicornButton;
     public void CharacterActivation()
     {
+        /*
         if (CoinCounter.currentCoins - 5 != 0)
         {
             UnicornButton.SetActive(false);
         }
+        */
     }
 }

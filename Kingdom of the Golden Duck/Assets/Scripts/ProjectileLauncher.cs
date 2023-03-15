@@ -15,12 +15,14 @@ public class ProjectileLauncher : MonoBehaviour
     void Update()
     {
         // Project projectile when W pressed
-        if (Input.GetKeyDown(KeyCode.W)) {
+        if(GameManager.regDuck == true) {
+            if (Input.GetKeyDown(KeyCode.W)) {
             Vector2 playerPosition = transform.position;
             Instantiate(projectilePrefab, playerPosition, projectilePrefab.transform.rotation);
 
             //Play Audio
             //playerAudio.PlayOneShot(projectileSound, 0.5f);
+        }
         }
     }
 }
