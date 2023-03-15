@@ -11,15 +11,73 @@ public class GameManager : MonoBehaviour
     public static bool uniDuck = false;
     public static bool artDuck = false;
     public static bool scubDuck = false;
+
+    // GameObject variables
+    private GameObject life1;
+    private GameObject life2;
+    private GameObject life3;
+
+    // Boolen for when game is running / over
+    public bool isGameActive;
+    // public Button restartButton; // Restart button
+
     // Start is called before the first frame update
     void Start()
     {
+        isGameActive = true;
+        
+        life1 = GameObject.Find("heart 1");
+        life2 = GameObject.Find("heart 2");
+        life3 = GameObject.Find("heart 3");
+    
+        life1.SetActive(true);
+        life2.SetActive(true);
+        life3.SetActive(true);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(isGameActive) {
+        // Make sure number of lives left is reflected in hearts shown on screen
+        if (PlayerController.lives == 3) {
+            life1.SetActive(true);
+            life2.SetActive(true);
+            life3.SetActive(true);
+        }
+        if (PlayerController.lives == 2) {
+            life1.SetActive(true);
+            life2.SetActive(true);
+            // Remove heart 3
+            life3.SetActive(false);
+        } else if (PlayerController.lives == 1) {
+            // Remove heart 2
+            life1.SetActive(true);
+            life2.SetActive(false);
+            life3.SetActive(false);
+        } else if (PlayerController.lives == 0) {
+             // Remove heart 1
+            life1.SetActive(false);
+            life2.SetActive(false);
+            life3.SetActive(false);
+            // GameOver(); 
+        }
+        }
     }
+
+    public void GameOver() {
+        isGameActive = false;
+    }
+
+    /*
+    public void RestartGame() {
+        isGameActive = true;
+        PlayerController.lives = 3f;
+        EnemySpawn.enemiesSpawned = 0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    */
+
+    
 }
