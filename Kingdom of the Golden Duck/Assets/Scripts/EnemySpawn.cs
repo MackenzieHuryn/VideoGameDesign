@@ -16,8 +16,9 @@ public class EnemySpawn : MonoBehaviour
     private float spawnTimeInterval = 0.5f;
 
     // Control how many enemies can appear onscreen at a time.
-    private float maxEnemySpawn = 2f;
+    private float maxEnemySpawn = 1f;
     public static float fishSpawned = 0f;
+    public static float badDuckSpawned = 0f;
 
     // Range of x
     private float xMin = 2f;
@@ -34,6 +35,7 @@ public class EnemySpawn : MonoBehaviour
     {
          gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         fishSpawned = 0f;
+        badDuckSpawned = 0f;
          spawnEnemyDucks();
 
     }
@@ -67,6 +69,7 @@ public class EnemySpawn : MonoBehaviour
     void spawnEnemyDucks() {
     Vector2 pos = new Vector2 ( (xMax + 2f ), -0.33f);
     Instantiate(enemyDuckPrefab, pos, enemyDuckPrefab.transform.rotation); 
+    badDuckSpawned++;
     }
 }
 

@@ -18,7 +18,7 @@ public class PaintMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        fish1 = GameObject.Find("Enemy Fish(Clone)");
         Vector2 fishDirection = (fish1.transform.position - transform.position);
 
          transform.Translate(fishDirection * speed);
