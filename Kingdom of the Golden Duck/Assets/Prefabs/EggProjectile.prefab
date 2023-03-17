@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8903982554928939435}
   - component: {fileID: 378317783588135068}
-  - component: {fileID: 5311222243285555853}
   - component: {fileID: 1948614415413719596}
   - component: {fileID: 1103249703132659581}
   - component: {fileID: 4251435050638487854}
   - component: {fileID: 7127577549892679496}
+  - component: {fileID: 703621243}
   m_Layer: 0
   m_Name: EggProjectile
   m_TagString: Untagged
@@ -89,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5311222243285555853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3189101255217321844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b75f61f645127a47a85224a464b2cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &1948614415413719596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +160,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &703621243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189101255217321844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b75f61f645127a47a85224a464b2cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
