@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
     //runs this code when the player collides with an enemy
     private void OnCollisionEnter2D(Collision2D collision) {
         //Debug.Log("Collision");
-        if (collision.gameObject.tag == "Enemy" ){ 
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyFish"){ 
             // Remove Lives
             Debug.Log("Life Lost! Lives left:" + lives);
             lives--;

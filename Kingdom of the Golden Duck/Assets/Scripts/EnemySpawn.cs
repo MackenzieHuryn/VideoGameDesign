@@ -13,7 +13,7 @@ public class EnemySpawn : MonoBehaviour
 
     // Floats for randomly spawning enemy
     private float timerX; // Timer for the interval
-    private float spawnTimeInterval = 0.5f;
+    private float spawnTimeInterval = 1.5f;
 
     // Control how many enemies can appear onscreen at a time.
     private float maxEnemySpawn = 1f;
@@ -35,8 +35,8 @@ public class EnemySpawn : MonoBehaviour
     {
          gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         fishSpawned = 0f;
-        badDuckSpawned = 0f;
          spawnEnemyDucks();
+         badDuckSpawned = 1f;
 
     }
 
@@ -45,11 +45,10 @@ public class EnemySpawn : MonoBehaviour
     {
         // Start timer
         timerX += Time.deltaTime;
-        spawnTimeInterval = Random.Range(1f,10f);
-        Debug.Log(fishSpawned);
+        spawnTimeInterval = Random.Range(5f,15f);
+        Debug.Log(badDuckSpawned);
 
         if ((timerX >= spawnTimeInterval) && (fishSpawned < maxEnemySpawn)) {
-            fishSpawned++;
             spawnFish();
 
             // Resets timer back to 0
@@ -62,6 +61,7 @@ public class EnemySpawn : MonoBehaviour
         // Set random position to spawn to- setting random numbers for x and y
         Vector2 pos = new Vector2 (Random.Range (xMin, xMax), Random.Range (yFishMin, yFishMax));
         // Creates object at random position
+        fishSpawned++;
         Instantiate(enemyFishPrefab, pos, enemyFishPrefab.transform.rotation); 
        // } 
     }
@@ -69,7 +69,7 @@ public class EnemySpawn : MonoBehaviour
     void spawnEnemyDucks() {
     Vector2 pos = new Vector2 ( (xMax + 2f ), -0.33f);
     Instantiate(enemyDuckPrefab, pos, enemyDuckPrefab.transform.rotation); 
-    badDuckSpawned++;
+    
     }
 }
 

@@ -9,12 +9,15 @@ public class PlayerChangeSprite : MonoBehaviour
     private GameManager gameManager;
     void Awake(){
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        GameManager.regDuck = true;
     }
     
     void Update() {
         if (Input.GetKeyDown (KeyCode.Alpha1)) {
             Debug.Log("1-unicorn");
             GameManager.regDuck = false;
+            GameManager.artDuck = false;
+            GameManager.scubDuck = false;
             GameManager.uniDuck = true;
             ChangeSprite(0);
             Debug.Log("The Duck's costume is Unicorn :" + GameManager.uniDuck);
@@ -23,8 +26,11 @@ public class PlayerChangeSprite : MonoBehaviour
             Debug.Log("2-artist");
             ChangeSprite(1);
             GameManager.regDuck = false;
+            GameManager.uniDuck = false;
+            GameManager.scubDuck = false;
             GameManager.artDuck = true;
         }
+        
         if (Input.GetKeyDown (KeyCode.Alpha3)) {
             Debug.Log("3-scuba");
             ChangeSprite(2);
@@ -34,12 +40,15 @@ public class PlayerChangeSprite : MonoBehaviour
             }
             gameManager.setTimer();
             GameManager.regDuck = false;
+            GameManager.artDuck = false;
+            GameManager.uniDuck = false;
             GameManager.scubDuck = true;
         }
-        if(gameManager.scubaAir){
+        
+       /* if(gameManager.scubaAir){
             ChangeSprite(3);
-        }
-
+        }*/
+        
 
     }
     
