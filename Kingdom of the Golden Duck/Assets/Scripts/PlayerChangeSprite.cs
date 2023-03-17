@@ -6,7 +6,10 @@ public class PlayerChangeSprite : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
     public Sprite[] spriteArray; // Holds possible costumes for player
-
+    private GameManager gameManager;
+    void Awake(){
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    }
     
     void Update() {
         if (Input.GetKeyDown (KeyCode.Alpha1)) {
@@ -25,8 +28,16 @@ public class PlayerChangeSprite : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.Alpha3)) {
             Debug.Log("3-scuba");
             ChangeSprite(2);
+            if(gameManager.timeLeft < 5 && gameManager.scubaAir){
+                gameManager.timeLeft = gameManager.timeLeft + 10;
+                gameManager.scubaAir = false;
+            }
+            gameManager.setTimer();
             GameManager.regDuck = false;
             GameManager.scubDuck = true;
+        }
+        if(gameManager.scubaAir){
+            ChangeSprite(3);
         }
 
 

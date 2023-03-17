@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
@@ -11,11 +13,19 @@ public class GameManager : MonoBehaviour
     public static bool uniDuck = false;
     public static bool artDuck = false;
     public static bool scubDuck = false;
+    
 
     // GameObject variables
     private GameObject life1;
     private GameObject life2;
     private GameObject life3;
+
+    public float breath = 5.0f;
+    public float timeLeft = 5.0f;
+    [SerializeField]
+    public TextMeshProUGUI airTime;
+    public bool underwater = false;
+    public bool scubaAir = true;
 
     // Boolen for when game is running / over
     public bool isGameActive;
@@ -39,6 +49,14 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(underwater){
+            if(timeLeft > 0){
+                timeLeft = timeLeft - Time.deltaTime;
+            } else{
+                timeLeft = 0;
+            }
+            airTime.text = "Air: " + timeLeft;
+        }
         if(isGameActive) {
         // Make sure number of lives left is reflected in hearts shown on screen
         if (PlayerController.lives == 3) {
@@ -68,6 +86,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver() {
         isGameActive = false;
+    }
+    public void setTimer(){
+        airTime.text = "Air: " + timeLeft;
     }
 
     /*
