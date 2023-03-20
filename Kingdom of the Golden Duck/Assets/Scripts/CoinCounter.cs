@@ -1,3 +1,4 @@
+/*
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class CoinCounter : MonoBehaviour
     {
         instance = this;
     }
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,3 +35,4 @@ public class CoinCounter : MonoBehaviour
 
     }
 }
+*/

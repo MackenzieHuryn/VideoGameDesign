@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            CoinCounter.instance.IncreaseCoins(value);
+          //  CoinCounter.instance.IncreaseCoins(value);
         }
     }
 

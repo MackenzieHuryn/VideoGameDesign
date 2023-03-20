@@ -8,17 +8,17 @@ public class DestroyEnemy : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision");
         if (collision.gameObject.tag == "EnemyFish") { 
-            
+            EnemySpawn.fishSpawned--;
             // Destroys object it collides with
             Destroy(collision.gameObject);
-            EnemySpawn.fishSpawned--;
+            
             // Destroys projectile
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Enemy") {
              // Destroys object it collides with
             Destroy(collision.gameObject);
-            EnemySpawn.badDuckSpawned--;
+            EnemySpawn.badDuckSpawned = 0f;
             // Destroys projectile
             Destroy(gameObject);
             

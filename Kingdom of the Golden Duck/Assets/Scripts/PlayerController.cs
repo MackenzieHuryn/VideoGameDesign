@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float gravScale = 15.0f;
     public static float lives = 3f;
     private GameManager gameManager;
+    private PlayerChangeSprite playerChangeSprite;
     public bool OnPlate = false;
 
 
@@ -52,11 +53,13 @@ public class PlayerController : MonoBehaviour
     public KeyCode diveKey;
     public KeyCode jumpReal;
 
+    public 
     Rigidbody2D rb;
     SpriteRenderer spr;
     [HideInInspector]
     public bool isGrounded = false;
     int editorValueJumps;
+
     //private HashSet<GameObject> touching = new HashSet<GameObject>();
 
     void Awake()
@@ -64,12 +67,30 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        lives = 3f;
         //rb.angularDrag = 0;
     }
 
     void Update()
     {
+        if(transform.position.y < waterlineY - 0.1){
+            gameManager.underwater = true;
+            
+        }else{
+            gameManager.underwater = false;
+            gameManager.timeLeft = 5.0f;
+            gameManager.setTimer();
+            gameManager.scubaAir = true;
+            
+        }
+         
+       if(gameManager.underwater && gameManager.timeLeft == 0)
+       {
+            lives--;
+            gameManager.timeLeft = 5.0f;
+            gameManager.setTimer();
+       }
+
+        
         if(jumping == true && transform.position.y  < waterlineY){
             jumping = false;
             rb.gravityScale = 0;
@@ -135,6 +156,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /*public void drowning(float waitTime)
+    {
+        float timeSinceStarted = 0f;
+        float secDiff = 2.0f;
+        float counter = 1.0f;
+        while(true){
+            timeSinceStarted += Time.deltaTime;
+            if(!gameManager.underwater){
+                break;
+            }
+            if(timeSinceStarted > secDiff * counter){
+                counter++;
+                lives--;
+            }
+        }
+    }*/
     public void doJump(){
         //Vector3 dirY = transform.up * thrust;
         //rb.AddForce(new Vector2 (0, dirY.y));
@@ -163,7 +200,7 @@ public class PlayerController : MonoBehaviour
     //runs this code when the player collides with an enemy
     private void OnCollisionEnter2D(Collision2D collision) {
         //Debug.Log("Collision");
-        if (collision.gameObject.tag == "Enemy" ){ 
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyFish"){ 
             // Remove Lives
             Debug.Log("Life Lost! Lives left:" + lives);
             lives--;
