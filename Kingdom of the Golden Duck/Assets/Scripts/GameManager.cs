@@ -22,19 +22,23 @@ public class GameManager : MonoBehaviour
 
     public float breath = 5.0f;
     public float timeLeft = 5.0f;
-    [SerializeField]
-    public TextMeshProUGUI airTime;
+    //[SerializeField]
+    //public TextMeshProUGUI o2Bar;
     public bool underwater = false;
     public bool scubaAir = true;
 
     // Boolen for when game is running / over
     public bool isGameActive;
     // public Button restartButton; // Restart button
-
+    private SpriteRenderer sprRend;
+    public GameObject o2Bar;
     // Start is called before the first frame update
     void Start()
     {
         isGameActive = true;
+        sprRend = o2Bar.GetComponent<SpriteRenderer>();
+        sprRend.drawMode = SpriteDrawMode.Sliced;
+        //sprRend.size = new Vector2(1.0f, 1.0f);
         
         life1 = GameObject.Find("heart 1");
         life2 = GameObject.Find("heart 2");
@@ -85,7 +89,7 @@ public class GameManager : MonoBehaviour
                 } else{
                     timeLeft = 0;
                 }
-                airTime.text = "Air: " + timeLeft;
+                sprRend.size = new Vector2(timeLeft/breath, 1.0f);
             }
         }
     }
@@ -102,7 +106,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void setTimer(){
-        airTime.text = "Air: " + timeLeft;
+        sprRend.size = new Vector2(timeLeft/breath, 1.0f);
+        //o2Bar
+        //airTime.text = "Air: " + timeLeft;
     }
 
     
