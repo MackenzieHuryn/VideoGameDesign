@@ -48,57 +48,64 @@ public class GameManager : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if(underwater){
-            if(timeLeft > 0){
-                timeLeft = timeLeft - Time.deltaTime;
-            } else{
-                timeLeft = 0;
-            }
-            airTime.text = "Air: " + timeLeft;
-        }
+    {   
+        
+        
         if(isGameActive) {
+            
         // Make sure number of lives left is reflected in hearts shown on screen
-        if (PlayerController.lives == 3) {
-            life1.SetActive(true);
-            life2.SetActive(true);
-            life3.SetActive(true);
-        }
-        if (PlayerController.lives == 2) {
-            life1.SetActive(true);
-            life2.SetActive(true);
-            // Remove heart 3
-            life3.SetActive(false);
-        } else if (PlayerController.lives == 1) {
-            // Remove heart 2
-            life1.SetActive(true);
-            life2.SetActive(false);
-            life3.SetActive(false);
-        } else if (PlayerController.lives == 0) {
-             // Remove heart 1
-            life1.SetActive(false);
-            life2.SetActive(false);
-            life3.SetActive(false);
-            // GameOver(); 
-        }
+            if (PlayerController.lives == 3) {
+                life1.SetActive(true);
+                life2.SetActive(true);
+                life3.SetActive(true);
+            }
+            if (PlayerController.lives == 2) {
+                life1.SetActive(true);
+                life2.SetActive(true);
+                // Remove heart 3
+                life3.SetActive(false);
+            } else if (PlayerController.lives == 1) {
+                // Remove heart 2
+                life1.SetActive(true);
+                life2.SetActive(false);
+                life3.SetActive(false);
+            } else if (PlayerController.lives <= 0) {
+                
+                // Remove heart 1
+                //life1.SetActive(false);
+                //life2.SetActive(false);
+                //life3.SetActive(false);
+            
+                //RestartGame();
+                GameOver(); 
+            }
+            if(underwater){
+                if(timeLeft > 0){
+                    timeLeft = timeLeft - Time.deltaTime;
+                } else{
+                    timeLeft = 0;
+                }
+                airTime.text = "Air: " + timeLeft;
+            }
         }
     }
 
     public void GameOver() {
         isGameActive = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void setTimer(){
         airTime.text = "Air: " + timeLeft;
     }
 
-    /*
+    
     public void RestartGame() {
-        isGameActive = true;
+        /*isGameActive = true;
         PlayerController.lives = 3f;
-        EnemySpawn.enemiesSpawned = 0f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        EnemySpawn.enemiesSpawned = 0f;*/
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    */
+    
 
     
 }

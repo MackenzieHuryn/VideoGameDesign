@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (gameManager.isGameActive) {
         if(transform.position.y < waterlineY - 0.1){
             gameManager.underwater = true;
             
@@ -154,6 +155,7 @@ public class PlayerController : MonoBehaviour
             vel.y = Mathf.Lerp(vel.y, 0, drag);
             rb.velocity = vel;
         }
+        }
     }
 
     /*public void drowning(float waitTime)
@@ -202,7 +204,7 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Collision");
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyFish"){ 
             // Remove Lives
-            Debug.Log("Life Lost! Lives left:" + lives);
+            //Debug.Log("Life Lost! Lives left:" + lives);
             lives--;
         }
         if (collision.gameObject.tag == "Platform" ){ 

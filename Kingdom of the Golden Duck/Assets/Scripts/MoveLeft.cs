@@ -16,8 +16,8 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-         //if (gameManager.isGameActive) {
+         if (gameManager.isGameActive) {
         transform.Translate(Vector2.left * Time.deltaTime * speed);
-         //}
+         }
     }
 }

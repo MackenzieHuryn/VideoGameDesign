@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (gameManager.isGameActive) {
+        if (gameManager.isGameActive) {
             if (transform.position.y > yFishMax){
             transform.position = new Vector2(transform.position.x, yFishMax);
             }
@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
             transform.Translate(lookDirection * speed);
          
         
-     //   }
+        }
 
     }
     

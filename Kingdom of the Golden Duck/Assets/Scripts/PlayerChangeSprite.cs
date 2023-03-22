@@ -31,13 +31,14 @@ public class PlayerChangeSprite : MonoBehaviour
             GameManager.artDuck = true;
         }
         
-        if (Input.GetKeyDown (KeyCode.Alpha3)) {
+        if (Input.GetKeyDown (KeyCode.Alpha3) && gameManager.scubaAir && gameManager.underwater) {
             Debug.Log("3-scuba");
-            ChangeSprite(2);
-            if(gameManager.timeLeft < 5 && gameManager.scubaAir){
+
+            //if(gameManager.scubaAir && gameManager.underwater){
+                ChangeSprite(2);
                 gameManager.timeLeft = gameManager.timeLeft + 10;
                 gameManager.scubaAir = false;
-            }
+           // }
             gameManager.setTimer();
             GameManager.regDuck = false;
             GameManager.artDuck = false;
@@ -45,9 +46,13 @@ public class PlayerChangeSprite : MonoBehaviour
             GameManager.scubDuck = true;
         }
         
-       /* if(gameManager.scubaAir){
+       if(!gameManager.underwater && GameManager.scubDuck){
             ChangeSprite(3);
-        }*/
+            GameManager.regDuck = true;
+            GameManager.artDuck = false;
+            GameManager.uniDuck = false;
+            GameManager.scubDuck = false;
+       }
         
 
     }

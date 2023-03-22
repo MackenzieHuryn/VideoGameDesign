@@ -5,15 +5,17 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    private GameManager gameManager;
     // Start is called before the first frame updat e
     void Start()
     {
-        
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.isGameActive) {
         // Project projectile when W pressed
         if(GameManager.regDuck == true) {
             if (Input.GetKeyDown(KeyCode.W)) {
@@ -22,6 +24,7 @@ public class ProjectileLauncher : MonoBehaviour
 
             //Play Audio
             //playerAudio.PlayOneShot(projectileSound, 0.5f);
+        }
         }
         }
     }

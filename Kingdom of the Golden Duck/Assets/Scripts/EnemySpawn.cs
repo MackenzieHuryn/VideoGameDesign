@@ -43,6 +43,7 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.isGameActive) {
         // Start timer
         timerX += Time.deltaTime;
         spawnTimeInterval = Random.Range(5f,15f);
@@ -53,6 +54,7 @@ public class EnemySpawn : MonoBehaviour
 
             // Resets timer back to 0
             timerX = 0;
+        }
         }
     }
 

@@ -22,6 +22,7 @@ public class PaintMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.isGameActive) {
         fish1 = GameObject.Find("Enemy Fish(Clone)");
      
         if (player.transform.position.y < -0.1181383f && EnemySpawn.fishSpawned >= 1f) {
@@ -33,6 +34,6 @@ public class PaintMovement : MonoBehaviour
             Vector2 badDuckDirection = (badDuck.transform.position - transform.position);
             transform.Translate(badDuckDirection * speed);
         }
-        
+        }
     }
 }
