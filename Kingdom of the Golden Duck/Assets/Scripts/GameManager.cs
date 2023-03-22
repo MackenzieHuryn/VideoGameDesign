@@ -72,11 +72,11 @@ public class GameManager : MonoBehaviour
             } else if (PlayerController.lives <= 0) {
                 
                 // Remove heart 1
-                //life1.SetActive(false);
-                //life2.SetActive(false);
-                //life3.SetActive(false);
+                life1.SetActive(false);
+                life2.SetActive(false);
+                life3.SetActive(false);
             
-                //RestartGame();
+                
                 GameOver(); 
             }
             if(underwater){
@@ -92,19 +92,19 @@ public class GameManager : MonoBehaviour
 
     public void GameOver() {
         isGameActive = false;
+        life1.SetActive(true);
+        life2.SetActive(true);
+        life3.SetActive(true);
+        PlayerController.lives = 3f;
+        EnemySpawn.fishSpawned = 0f;
+        EnemySpawn.badDuckSpawned = 0f;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void setTimer(){
         airTime.text = "Air: " + timeLeft;
     }
 
-    
-    public void RestartGame() {
-        /*isGameActive = true;
-        PlayerController.lives = 3f;
-        EnemySpawn.enemiesSpawned = 0f;*/
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
     
 
     
