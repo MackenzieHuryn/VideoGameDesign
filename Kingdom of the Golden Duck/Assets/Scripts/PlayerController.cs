@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (gameManager.isGameActive) {
-        if(transform.position.y < waterlineY - 0.1){
+        if(transform.position.y < waterlineY - 1.2){
             gameManager.underwater = true;
             
         }else{
