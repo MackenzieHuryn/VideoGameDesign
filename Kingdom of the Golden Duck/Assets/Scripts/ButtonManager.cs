@@ -13,9 +13,25 @@ public class ButtonManager : MonoBehaviour
     public GameObject PaintDuckButton;
     public GameObject ScubaDuckButton;
 
+    private void Update()
+    {
+        if (coinCounterScript.currentCoins < 5)
+        {
+            UnicornButton.SetActive(false);
+            PaintDuckButton.SetActive(false);
+            ScubaDuckButton.SetActive(false);
+        }
+        else if (coinCounterScript.currentCoins > 4)
+        {
+            UnicornButton.SetActive(true);
+            PaintDuckButton.SetActive(true);
+            ScubaDuckButton.SetActive(true);
+        }
+    }
+
     public void UnicornActivation()
     {
-        if (coinCounterScript.currentCoins - 5 >= 0)
+        if (coinCounterScript.currentCoins > 4)
         {
             UnicornButton.SetActive(false);
             coinCounterScript.currentCoins -= 5;
@@ -26,7 +42,7 @@ public class ButtonManager : MonoBehaviour
 
     public void PaintDuckActivation()
     {
-        if (coinCounterScript.currentCoins - 5 >= 0)
+        if (coinCounterScript.currentCoins > 4)
         {
             PaintDuckButton.SetActive(false);
             coinCounterScript.currentCoins -= 5;
@@ -37,7 +53,7 @@ public class ButtonManager : MonoBehaviour
 
     public void ScubaDuckActivation()
     {
-        if (coinCounterScript.currentCoins - 5 >= 0)
+        if (coinCounterScript.currentCoins > 4)
         {
             ScubaDuckButton.SetActive(false);
             coinCounterScript.currentCoins -= 5;
