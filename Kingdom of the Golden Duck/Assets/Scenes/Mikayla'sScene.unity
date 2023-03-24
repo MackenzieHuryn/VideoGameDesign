@@ -3842,6 +3842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3189101255217321844, guid: 2c5c107c02065cc4383f025e0c9eee72, type: 3}
+  bubblePrefab: {fileID: 3244220034233288349, guid: 5ba54ba37eef67442b93b4d2e4c7e8e4, type: 3}
 --- !u!114 &2091249599
 MonoBehaviour:
   m_ObjectHideFlags: 0
