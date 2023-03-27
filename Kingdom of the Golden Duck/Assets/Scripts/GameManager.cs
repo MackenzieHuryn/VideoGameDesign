@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public float breath = 5.0f;
     public float timeLeft = 5.0f;
+    public float goldenDucks = 0f;
     //[SerializeField]
     //public TextMeshProUGUI o2Bar;
     public bool underwater = false;
@@ -108,6 +109,12 @@ public class GameManager : MonoBehaviour
         EnemySpawn.badDuckSpawned = 0f;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void GoldenDuck() {
+        goldenDucks++;
+        isGameActive = false;
+        SceneManager.LoadScene(5);
     }
     public void setTimer(){
         sprRend.size = new Vector2(timeLeft/breath, 1.0f);
