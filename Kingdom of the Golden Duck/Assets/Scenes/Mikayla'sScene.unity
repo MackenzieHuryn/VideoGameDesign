@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cfba2121df28b4fa6b23731d217777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
 --- !u!4 &362258238
 Transform:
   m_ObjectHideFlags: 0
@@ -1164,7 +1164,7 @@ GameObject:
   - component: {fileID: 567531173}
   m_Layer: 0
   m_Name: Static Sprite
-  m_TagString: Untagged
+  m_TagString: EndLevel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1347,7 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cfba2121df28b4fa6b23731d217777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
 --- !u!4 &669009719
 Transform:
   m_ObjectHideFlags: 0
@@ -1637,7 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cfba2121df28b4fa6b23731d217777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
 --- !u!4 &922961571
 Transform:
   m_ObjectHideFlags: 0
@@ -1753,7 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15cfba2121df28b4fa6b23731d217777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2.5
 --- !u!4 &965781973
 Transform:
   m_ObjectHideFlags: 0
@@ -3467,6 +3467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breath: 5
   timeLeft: 5
+  goldenDucks: 0
   underwater: 0
   scubaAir: 1
   isGameActive: 0
@@ -3842,6 +3843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3189101255217321844, guid: 2c5c107c02065cc4383f025e0c9eee72, type: 3}
+  bubblePrefab: {fileID: 3244220034233288349, guid: 5ba54ba37eef67442b93b4d2e4c7e8e4, type: 3}
 --- !u!114 &2091249599
 MonoBehaviour:
   m_ObjectHideFlags: 0

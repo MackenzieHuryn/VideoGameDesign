@@ -5,6 +5,7 @@ using UnityEngine;
 public class ProjectileLauncher : MonoBehaviour
 {
     public GameObject projectilePrefab;
+    public GameObject bubblePrefab;
     private GameManager gameManager;
 
     // Floats for preventing space spam
@@ -33,6 +34,15 @@ public class ProjectileLauncher : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.W)) {
                 Vector2 playerPosition = transform.position;
                 Instantiate(projectilePrefab, playerPosition, projectilePrefab.transform.rotation);
+                timerX = 0;
+                    //Play Audio
+                    //playerAudio.PlayOneShot(projectileSound, 0.5f);
+                }
+            }
+             if(GameManager.scubDuck == true && timerX >= spawnTimeInterval) {
+                if (Input.GetKeyDown(KeyCode.W)) {
+                Vector2 playerPosition = transform.position;
+                Instantiate(bubblePrefab, playerPosition, bubblePrefab.transform.rotation);
                 timerX = 0;
                     //Play Audio
                     //playerAudio.PlayOneShot(projectileSound, 0.5f);

@@ -199,7 +199,7 @@ public class PlayerController : MonoBehaviour
    
     }
 
-    //runs this code when the player collides with an enemy
+    //runs this code when the player collides with an enemy, platform, or the golden duck
     private void OnCollisionEnter2D(Collision2D collision) {
         //Debug.Log("Collision");
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyFish"){ 
@@ -225,6 +225,10 @@ public class PlayerController : MonoBehaviour
                     }*/
 
         }
+        if (collision.gameObject.tag == "EndLevel"){ 
+            Debug.Log("Golden Duck!!");
+           gameManager.GoldenDuck();
+        }
 
      }
      private void OnCollisionExit2D(Collision2D collision){
@@ -232,6 +236,7 @@ public class PlayerController : MonoBehaviour
             OnPlate = false;
           }
      }
+
      
 
   }
