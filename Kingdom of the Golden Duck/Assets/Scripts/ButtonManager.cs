@@ -12,6 +12,10 @@ public class ButtonManager : MonoBehaviour
     public GameObject UnicornButton;
     public GameObject PaintDuckButton;
     public GameObject ScubaDuckButton;
+    public bool UB = true;
+    public bool PDB = true;
+    public bool SDB = true;
+    public float timeLeft;
 
     private void Update()
     {
@@ -23,60 +27,75 @@ public class ButtonManager : MonoBehaviour
         }
         else if (coinCounterScript.currentCoins > 4)
         {
-            UnicornButton.SetActive(true);
-            PaintDuckButton.SetActive(true);
-            ScubaDuckButton.SetActive(true);
+            UnicornButton.SetActive(UB);
+            PaintDuckButton.SetActive(PDB);
+            ScubaDuckButton.SetActive(SDB);
         }
+        if(!UB){
+            
+            if(timeLeft > 0){
+                timeLeft = timeLeft - Time.deltaTime;
+                } else{
+                    UB = true;
+                }
+            }  
+        if(!PDB){
+            
+            if(timeLeft > 0){
+                timeLeft = timeLeft - Time.deltaTime;
+                } else{
+                    PDB = true;
+                }
+        } 
+        if(!SDB){
+            
+            if(timeLeft > 0){
+                timeLeft = timeLeft - Time.deltaTime;
+                } else{
+                    PDB = true;
+                }
+        }    
     }
 
     public void UnicornActivation()
     {
-        if (coinCounterScript.currentCoins > 4)
-        {
-            UnicornButton.SetActive(false);
-            coinCounterScript.currentCoins -= 5;
-            coinCounterScript.coinText.text = "Coins: " + coinCounterScript.currentCoins.ToString();
-            StartCoroutine(WaitForUButton());
-        }
+            coinCounterScript.DecreaseCoins(5);
+            timeLeft = 5;
+            UB = false;
+            //UnicornButton.SetActive(false);
+            //coinCounterScript.currentCoins -= 5;
+            //coinCounterScript.coinText.text = "Coins: " + coinCounterScript.currentCoins.ToString();
+            //StartCoroutine(WaitForUButton());
+        //}
     }
 
     public void PaintDuckActivation()
     {
-        if (coinCounterScript.currentCoins > 4)
-        {
-            PaintDuckButton.SetActive(false);
-            coinCounterScript.currentCoins -= 5;
-            coinCounterScript.coinText.text = "Coins: " + coinCounterScript.currentCoins.ToString();
-            StartCoroutine(WaitForPButton());
-        }
+        coinCounterScript.DecreaseCoins(5);
+        timeLeft = 5;
+        PDB = false;
+        //if (coinCounterScript.currentCoins > 4)
+        //{
+            //PaintDuckButton.SetActive(false);
+            //coinCounterScript.currentCoins -= 5;
+            //coinCounterScript.coinText.text = "Coins: " + coinCounterScript.currentCoins.ToString();
+            //StartCoroutine(WaitForPButton());
+        //}
     }
 
     public void ScubaDuckActivation()
     {
-        if (coinCounterScript.currentCoins > 4)
-        {
-            ScubaDuckButton.SetActive(false);
-            coinCounterScript.currentCoins -= 5;
-            coinCounterScript.coinText.text = "Coins: " + coinCounterScript.currentCoins.ToString();
-            StartCoroutine(WaitForSButton());
-        }
+        coinCounterScript.DecreaseCoins(5);
+        timeLeft = 5;
+        SDB = false;
+        //if (coinCounterScript.currentCoins > 4)
+        //{
+            //ScubaDuckButton.SetActive(false);
+            //coinCounterScript.currentCoins -= 5;
+            //coinCounterScript.coinText.text = "Coins: " + coinCounterScript.currentCoins.ToString();
+            //StartCoroutine(WaitForSButton());
+        //}
     }
 
-    IEnumerator WaitForUButton()
-    {
-        yield return new WaitForSeconds(15);
-        UnicornButton.SetActive(true);
-    }
 
-    IEnumerator WaitForPButton()
-    {
-        yield return new WaitForSeconds(15);
-        PaintDuckButton.SetActive(true);
-    }
-
-    IEnumerator WaitForSButton()
-    {
-        yield return new WaitForSeconds(15);
-        ScubaDuckButton.SetActive(true);
-    }
 }

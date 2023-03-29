@@ -30,8 +30,9 @@ public class CoinCounter : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void DecreaseCoins(int v)
     {
-
+        currentCoins -= v;
+        coinText.text = "Coins: " + currentCoins.ToString();
     }
 }
