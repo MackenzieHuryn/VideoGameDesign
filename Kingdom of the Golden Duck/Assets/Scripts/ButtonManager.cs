@@ -52,7 +52,7 @@ public class ButtonManager : MonoBehaviour
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
                 } else{
-                    PDB = true;
+                    SDB = true;
                 }
         }    
     }

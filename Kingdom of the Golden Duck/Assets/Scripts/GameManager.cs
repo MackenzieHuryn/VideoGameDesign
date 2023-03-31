@@ -90,7 +90,13 @@ public class GameManager : MonoBehaviour
                 } else{
                     timeLeft = 0;
                 }
-                sprRend.size = new Vector2(timeLeft/breath, 1.0f);
+                if(scubDuck){
+                    sprRend.size = new Vector2(timeLeft/10f, 1.0f);
+                } else{
+                    sprRend.size = new Vector2(timeLeft/breath, 1.0f);
+                }
+            }else{
+                sprRend.size = new Vector2(0f, 1.0f);
             }
         }
     }
@@ -117,7 +123,12 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(5);
     }
     public void setTimer(){
-        sprRend.size = new Vector2(timeLeft/breath, 1.0f);
+        if(scubDuck){
+            sprRend.size = new Vector2(timeLeft/10f, 1.0f);
+        } else{
+            sprRend.size = new Vector2(timeLeft/breath, 1.0f);
+        }
+        //sprRend.size = new Vector2(timeLeft/breath, 1.0f);
         //o2Bar
         //airTime.text = "Air: " + timeLeft;
     }
