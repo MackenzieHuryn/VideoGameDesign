@@ -16,7 +16,23 @@ public class ButtonManager : MonoBehaviour
     public bool PDB = true;
     public bool SDB = true;
     public float timeLeft;
-
+    public GameObject paintBar;
+    private SpriteRenderer sprPaint;
+    public GameObject unicornBar;
+    private SpriteRenderer sprUni;
+    public GameObject scubaBar;
+    private SpriteRenderer sprScuba;
+    void Start(){
+        sprPaint = paintBar.GetComponent<SpriteRenderer>();
+        sprPaint.drawMode = SpriteDrawMode.Sliced;
+        sprPaint.size = new Vector2(0f, 1.0f);
+        sprUni = unicornBar.GetComponent<SpriteRenderer>();
+        sprUni.drawMode = SpriteDrawMode.Sliced;
+        sprUni.size = new Vector2(0f, 1.0f);
+        sprScuba = scubaBar.GetComponent<SpriteRenderer>();
+        sprScuba.drawMode = SpriteDrawMode.Sliced;
+        sprScuba.size = new Vector2(0f, 1.0f);
+    }
     private void Update()
     {
         if (coinCounterScript.currentCoins < 5)
@@ -35,24 +51,30 @@ public class ButtonManager : MonoBehaviour
             
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
+                sprUni.size = new Vector2(timeLeft/5.0f, 1.0f);
                 } else{
                     UB = true;
+                    sprUni.size = new Vector2(0f, 1.0f);
                 }
             }  
         if(!PDB){
             
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
+                sprPaint.size = new Vector2(timeLeft/5.0f, 1.0f);
                 } else{
                     PDB = true;
+                    sprPaint.size = new Vector2(0f, 1.0f);
                 }
         } 
         if(!SDB){
             
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
+                sprScuba.size = new Vector2(timeLeft/5.0f, 1.0f);
                 } else{
                     SDB = true;
+                    sprScuba.size = new Vector2(0f, 1.0f);
                 }
         }    
     }
