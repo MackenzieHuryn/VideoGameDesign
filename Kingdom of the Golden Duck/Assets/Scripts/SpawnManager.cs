@@ -4,29 +4,54 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    //Array of objects to spawn (note I've removed the private goods variable)
+    public GameObject[] coins;
 
-    public GameObject coinPrefab;
-    private Vector3 spawnPos1 = new Vector3(0, -3, 0);
-    private Vector3 spawnPos2 = new Vector3(6, 3, 0);
+    //Time it takes to spawn theGoodies
+    [Space(3)]
+    public float waitingForNextSpawn = 10;
+    public float theCountdown = 10;
 
-    private float startDelay = 5;
-    private float repeatRate = 10;
+    // the range of X
+    [Header("X Spawn Range")]
+    public float xMin;
+    public float xMax;
 
-    // Start is called before the first frame update
+    // the range of y
+    [Header("Y Spawn Range")]
+    public float yMin;
+    public float yMax;
+
+
     void Start()
     {
-        InvokeRepeating("SpawnCoin", startDelay, repeatRate);
     }
 
-    void SpawnCoin()
+    public void Update()
     {
-        Instantiate(coinPrefab, spawnPos1, coinPrefab.transform.rotation);
-        Instantiate(coinPrefab, spawnPos2, coinPrefab.transform.rotation);
+        // timer to spawn the next goodie Object
+        theCountdown -= Time.deltaTime;
+        if (theCountdown <= 0)
+        {
+            SpawnCoins();
+            theCountdown = waitingForNextSpawn;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void SpawnCoins()
     {
-        
+        // Defines the min and max ranges for x and y
+        Vector2 pos = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
+
+        // Choose a new goods to spawn from the array (note I specifically call it a 'prefab' to avoid confusing myself!)
+        GameObject coinsPrefab = coins[Random.Range(0, coins.Length)];
+
+        // Creates the random object at the random 2D position.
+        Instantiate(coinsPrefab, pos, transform.rotation);
+
+        // If I wanted to get the result of instantiate and fiddle with it, I might do this instead:
+        //GameObject newGoods = (GameObject)Instantiate(goodsPrefab, pos)
+        //newgoods.something = somethingelse;
     }
 }

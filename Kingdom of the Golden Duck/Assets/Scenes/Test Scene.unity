@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 3189101255217321844, guid: 2c5c107c02065cc4383f025e0c9eee72, type: 3}
+  bubblePrefab: {fileID: 3244220034233288349, guid: 5ba54ba37eef67442b93b4d2e4c7e8e4, type: 3}
 --- !u!114 &14307594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,6 +178,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b09d17f61af1875428d3e20d35890f25, type: 3}
   - {fileID: 21300000, guid: 9aec3b15fe430e949bb75e174f5b8a99, type: 3}
   - {fileID: 21300000, guid: bf66ec5658caf804c96f3dc0a58495b6, type: 3}
+  buttonManager: {fileID: 277652709}
+  coinCounter: {fileID: 233973011}
 --- !u!70 &14307595
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -237,7 +240,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11900455, y: -0.12439762}
+  m_Offset: {x: -0.022580817, y: -0.0021039844}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -248,7 +251,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5022292, y: 0.30183414}
+  m_Size: {x: 0.8738136, y: 0.5464214}
   m_EdgeRadius: 0
 --- !u!50 &14307598
 Rigidbody2D:
@@ -311,7 +314,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 9
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: bf66ec5658caf804c96f3dc0a58495b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -734,6 +737,10 @@ MonoBehaviour:
   UnicornButton: {fileID: 698673106}
   PaintDuckButton: {fileID: 258866721}
   ScubaDuckButton: {fileID: 1163052603}
+  UB: 1
+  PDB: 1
+  SDB: 1
+  timeLeft: 0
 --- !u!4 &277652710
 Transform:
   m_ObjectHideFlags: 0
@@ -1093,7 +1100,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4801d9b4458144fdb464a5ee34cbfa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+  Coin:
+  - {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+  - {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+  spawnValues: {x: 0, y: 0, z: 0}
+  spawnWait: 0
+  spawnMostWait: 6
+  spawnLeastWait: 3
+  startWait: 1
+  stop: 0
+  GameActive: {fileID: 1752355022}
 --- !u!4 &538042866
 Transform:
   m_ObjectHideFlags: 0
@@ -2674,6 +2690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breath: 5
   timeLeft: 5
+  goldenDucks: 0
   underwater: 0
   scubaAir: 1
   isGameActive: 0
