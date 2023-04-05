@@ -203,9 +203,25 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         //Debug.Log("Collision");
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyFish"){ 
+            if(GameManager.uniDuck){
+                if (collision.gameObject.tag == "EnemyFish") { 
+                    EnemySpawn.fishSpawned--;
+                    // Destroys object it collides with
+                    Destroy(collision.gameObject);
+         
+                }
+                if (collision.gameObject.tag == "Enemy") {
+                 // Destroys object it collides with
+                Destroy(collision.gameObject);
+                EnemySpawn.badDuckSpawned = 0f;
+                }
+            
+            }else{
             // Remove Lives
             //Debug.Log("Life Lost! Lives left:" + lives);
             lives--;
+            }
+
         }
         if (collision.gameObject.tag == "Platform" ){ 
            OnPlate = true;

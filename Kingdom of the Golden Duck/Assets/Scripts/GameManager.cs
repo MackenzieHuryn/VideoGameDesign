@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     // public Button restartButton; // Restart button
     private SpriteRenderer sprRend;
     public GameObject o2Bar;
+
     // Start is called before the first frame update
     void Start()
     {
