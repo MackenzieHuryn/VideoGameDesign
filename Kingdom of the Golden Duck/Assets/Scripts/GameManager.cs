@@ -121,6 +121,16 @@ public class GameManager : MonoBehaviour
     public void GoldenDuck() {
         goldenDucks++;
         isGameActive = false;
+        life1.SetActive(true);
+        life2.SetActive(true);
+        life3.SetActive(true);
+        regDuck = true;
+        uniDuck = false;
+        artDuck = false;
+        scubDuck = false;
+        PlayerController.lives = 3f;
+        EnemySpawn.fishSpawned = 0f;
+        EnemySpawn.badDuckSpawned = 0f;
         SceneManager.LoadScene(5);
     }
     public void setTimer(){

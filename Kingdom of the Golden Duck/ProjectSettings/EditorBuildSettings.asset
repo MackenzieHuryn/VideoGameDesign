@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CutScene.unity
     guid: 7f74901d482abcb4ba444e7fecc49dfd
+  - enabled: 1
+    path: Assets/Scenes/Mikayla'sScene.unity
+    guid: effd251801c97ea4ba38e8e9b4635e9f
   m_configObjects: {}
