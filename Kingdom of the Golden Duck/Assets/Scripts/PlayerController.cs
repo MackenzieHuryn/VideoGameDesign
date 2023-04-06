@@ -181,11 +181,12 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector2.up * Time.deltaTime * thrust * 0.5f);
         //transform.Translate(new Vector2(0.0f, Time.deltaTime * thrust * 0.5f));
        float timeSinceStarted = 0f;
+       float jumpPos = transform.position.y + 4;
         while(true){
             timeSinceStarted += Time.deltaTime;
             Vector2 newPos = new Vector2(transform.position.x, transform.position.y + 4);
             transform.position = Vector2.Lerp(transform.position, newPos, timeSinceStarted);
-            if (transform.position.y >= 4)
+            if (transform.position.y >= 5)
             {
                 break;
             }
