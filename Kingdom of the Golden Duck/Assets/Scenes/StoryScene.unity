@@ -347,8 +347,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Name the duck is on a mission: collect all golden ducks lost during the
-    Raid of the Something.
+  m_text: 'Duck is on a mission: collect all golden ducks lost during the Raid of
+    the Goose.
 
 '
   m_isRightToLeft: 0
@@ -973,7 +973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Help Name journey through environments, from a jungle to the ocean, by
+  m_text: 'Help Duck journey through environments, from a jungle to the ocean, by
     selecting costumes to fight in, and collecting power-ups and coins along the
     way.
 
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Each costume and powerup enables ''Name'' to gain different powers. Purchases
+  m_text: 'Each costume and powerup enables Duck to gain different powers. Purchases
     for such items can be made with the coins collected.
 
 '
