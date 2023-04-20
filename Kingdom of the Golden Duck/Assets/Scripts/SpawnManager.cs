@@ -44,14 +44,10 @@ public class SpawnManager : MonoBehaviour
         // Defines the min and max ranges for x and y
         Vector2 pos = new Vector2(Random.Range(xMin, xMax), Random.Range(yMin, yMax));
 
-        // Choose a new goods to spawn from the array (note I specifically call it a 'prefab' to avoid confusing myself!)
+        // Choose a new goods to spawn from the array
         GameObject coinsPrefab = coins[Random.Range(0, coins.Length)];
 
         // Creates the random object at the random 2D position.
         Instantiate(coinsPrefab, pos, transform.rotation);
-
-        // If I wanted to get the result of instantiate and fiddle with it, I might do this instead:
-        //GameObject newGoods = (GameObject)Instantiate(goodsPrefab, pos)
-        //newgoods.something = somethingelse;
     }
 }
