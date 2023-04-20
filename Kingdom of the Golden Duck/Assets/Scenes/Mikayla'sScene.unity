@@ -1240,7 +1240,8 @@ MonoBehaviour:
   lowBound: -4.15
   waterlineY: 0
   thrust: 200
-  gravScale: 20
+  gravScale: 10
+  jumpPower: 25
   OnPlate: 0
   moveSpeed: 5
   jumpSpeed: 1
