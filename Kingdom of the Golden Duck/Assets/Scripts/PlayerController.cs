@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public float thrust = 20.0f;
     public float gravScale = 5.0f;
     public static float lives = 3f;
+    public float jumpPower = 5.0f;
     private GameManager gameManager;
     private PlayerChangeSprite playerChangeSprite;
     public bool OnPlate = false;
@@ -143,12 +144,17 @@ public class PlayerController : MonoBehaviour
         }
       
         if((OnPlate == true) && Input.GetKey(jumpReal)){
-
-            doJump();
+            jumping = true;
+            rb.gravityScale = gravScale;
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);    
+        
+            //doJump();
 
         } else if(jumping == false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY)){
-
-            doJump();
+            jumping = true;
+            rb.gravityScale = gravScale;
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);    
+            //doJump();
 
         } 
         if (jumping == false && Input.GetKeyDown(upKey) && (transform.position.y <= waterlineY))
