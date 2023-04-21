@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
 
     public float breath = 5.0f;
     public float timeLeft = 5.0f;
+    public float timeLeftScub = 30.0f;
     public float goldenDucks = 0f;
     //[SerializeField]
     //public TextMeshProUGUI o2Bar;
@@ -33,6 +34,8 @@ public class GameManager : MonoBehaviour
     // public Button restartButton; // Restart button
     private SpriteRenderer sprRend;
     public GameObject o2Bar;
+    private SpriteRenderer sprRendD;
+    public GameObject diamond;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +43,8 @@ public class GameManager : MonoBehaviour
         isGameActive = true;
         sprRend = o2Bar.GetComponent<SpriteRenderer>();
         sprRend.drawMode = SpriteDrawMode.Sliced;
+        sprRendD = diamond.GetComponent<SpriteRenderer>();
+        sprRendD.drawMode = SpriteDrawMode.Sliced;
         //sprRend.size = new Vector2(1.0f, 1.0f);
         
         life1 = GameObject.Find("heart 1");
@@ -86,18 +91,24 @@ public class GameManager : MonoBehaviour
                 GameOver(); 
             }
             if(underwater){
+                if(scubDuck){
+                    timeLeft = 10;
+                }
                 if(timeLeft > 0){
                     timeLeft = timeLeft - Time.deltaTime;
                 } else{
                     timeLeft = 0;
                 }
                 if(scubDuck){
-                    sprRend.size = new Vector2(timeLeft/10f, 1.0f);
+                    sprRendD.size = new Vector2(1.0f, 1.0f);
+                    sprRend.size = new Vector2(0f, 1.0f);
                 } else{
                     sprRend.size = new Vector2(timeLeft/breath, 1.0f);
+                    sprRendD.size = new Vector2(0f, 1.0f);
                 }
             }else{
                 sprRend.size = new Vector2(0f, 1.0f);
+                sprRendD.size = new Vector2(0f, 1.0f);
             }
         }
     }
@@ -135,7 +146,7 @@ public class GameManager : MonoBehaviour
     }
     public void setTimer(){
         if(scubDuck){
-            sprRend.size = new Vector2(timeLeft/10f, 1.0f);
+            sprRend.size = new Vector2(timeLeftScub/10f, 1.0f);
         } else{
             sprRend.size = new Vector2(timeLeft/breath, 1.0f);
         }

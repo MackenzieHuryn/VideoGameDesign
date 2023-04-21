@@ -25,7 +25,7 @@ public class PlayerChangeSprite : MonoBehaviour
             Debug.Log("The Duck's costume is Unicorn :" + GameManager.uniDuck);
             buttonManager.UnicornActivation();
         }
-        if((buttonManager.UB && buttonManager.PDB && buttonManager.SDB) || (!gameManager.underwater && GameManager.scubDuck)){
+        if((buttonManager.UB && buttonManager.PDB && buttonManager.SDB)){
             ChangeSprite(3);
             GameManager.regDuck = true;
             GameManager.artDuck = false;
@@ -43,7 +43,7 @@ public class PlayerChangeSprite : MonoBehaviour
             buttonManager.PaintDuckActivation();
         }
         
-        if (Input.GetKeyDown (KeyCode.Alpha3) && gameManager.scubaAir && gameManager.underwater && buttonManager.SDB && coinCounter.currentCoins >= 5) {
+        if (Input.GetKeyDown (KeyCode.Alpha3) && buttonManager.SDB && coinCounter.currentCoins >= 5) {
             Debug.Log("3-scuba");
 
             ChangeSprite(2);

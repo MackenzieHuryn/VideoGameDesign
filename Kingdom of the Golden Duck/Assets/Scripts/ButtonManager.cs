@@ -22,6 +22,7 @@ public class ButtonManager : MonoBehaviour
     private SpriteRenderer sprUni;
     public GameObject scubaBar;
     private SpriteRenderer sprScuba;
+
     void Start(){
         sprPaint = paintBar.GetComponent<SpriteRenderer>();
         sprPaint.drawMode = SpriteDrawMode.Sliced;
@@ -51,7 +52,7 @@ public class ButtonManager : MonoBehaviour
             
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
-                sprUni.size = new Vector2(timeLeft/5.0f, 1.0f);
+                sprUni.size = new Vector2(timeLeft/20.0f, 1.0f);
                 } else{
                     UB = true;
                     sprUni.size = new Vector2(0f, 1.0f);
@@ -61,7 +62,7 @@ public class ButtonManager : MonoBehaviour
             
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
-                sprPaint.size = new Vector2(timeLeft/5.0f, 1.0f);
+                sprPaint.size = new Vector2(timeLeft/20.0f, 1.0f);
                 } else{
                     PDB = true;
                     sprPaint.size = new Vector2(0f, 1.0f);
@@ -71,7 +72,7 @@ public class ButtonManager : MonoBehaviour
             
             if(timeLeft > 0){
                 timeLeft = timeLeft - Time.deltaTime;
-                sprScuba.size = new Vector2(timeLeft/5.0f, 1.0f);
+                sprScuba.size = new Vector2(timeLeft/30.0f, 1.0f);
                 } else{
                     SDB = true;
                     sprScuba.size = new Vector2(0f, 1.0f);
@@ -82,7 +83,7 @@ public class ButtonManager : MonoBehaviour
     public void UnicornActivation()
     {
             coinCounterScript.DecreaseCoins(5);
-            timeLeft = 5;
+            timeLeft = 20;
             UB = false;
             //UnicornButton.SetActive(false);
             //coinCounterScript.currentCoins -= 5;
@@ -94,7 +95,7 @@ public class ButtonManager : MonoBehaviour
     public void PaintDuckActivation()
     {
         coinCounterScript.DecreaseCoins(5);
-        timeLeft = 5;
+        timeLeft = 20;
         PDB = false;
         //if (coinCounterScript.currentCoins > 4)
         //{
@@ -108,7 +109,7 @@ public class ButtonManager : MonoBehaviour
     public void ScubaDuckActivation()
     {
         coinCounterScript.DecreaseCoins(5);
-        timeLeft = 5;
+        timeLeft = 30;
         SDB = false;
         //if (coinCounterScript.currentCoins > 4)
         //{
