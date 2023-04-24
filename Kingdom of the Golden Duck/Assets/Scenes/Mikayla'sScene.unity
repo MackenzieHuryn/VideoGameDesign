@@ -2810,6 +2810,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 318132311}
   gameManager: {fileID: 2034652822}
+  xRig: 0.45
+  yRig: 1
 --- !u!212 &678509873
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2909,6 +2911,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 318132311}
   gameManager: {fileID: 2034652822}
+  xRig: 0.45
+  yRig: 1
 --- !u!212 &847567041
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3075,6 +3079,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 318132311}
   gameManager: {fileID: 2034652822}
+  xRig: 0.45
+  yRig: 1.1
 --- !u!1 &922961569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4382,6 +4388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 318132311}
   gameManager: {fileID: 2034652822}
+  xRig: 0.45
+  yRig: 1
 --- !u!212 &1357229379
 SpriteRenderer:
   m_ObjectHideFlags: 0

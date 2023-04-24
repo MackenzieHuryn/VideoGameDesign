@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
                     timeLeft = 0;
                 }
                 if(scubDuck){
-                    sprRendD.size = new Vector2(1.0f, 1.0f);
+                    sprRendD.size = new Vector2(1.0f, 0.5f);
                     sprRend.size = new Vector2(0f, 1.0f);
                 } else{
                     sprRend.size = new Vector2(timeLeft/breath, 1.0f);
