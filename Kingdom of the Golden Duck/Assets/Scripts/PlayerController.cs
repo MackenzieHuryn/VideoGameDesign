@@ -35,8 +35,13 @@ public class PlayerController : MonoBehaviour
     public bool OnPlate = false;
 
 
+    // For player color change/flashing
+    private SpriteRenderer spriteRenderer;
+    private Color red;
+    private Color white;
+
     // Start is called before the first frame update
-    
+
     public float moveSpeed;
     //[Tooltip("The Y velocity set when the player jumps.  Changing the gravity scale on Rigidbody2D, to something like 3 to 4, can help to make this feel more snappy.")]
     public float jumpSpeed;
@@ -62,13 +67,19 @@ public class PlayerController : MonoBehaviour
     int editorValueJumps;
 
     //private HashSet<GameObject> touching = new HashSet<GameObject>();
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         spr = GetComponent<SpriteRenderer>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         //rb.angularDrag = 0;
+    }
+
+    private void Start()
+    {
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        red = new Color(1, 0.4f, 0.4f, 1);
+        white = new Color(1, 1, 1, 1);
     }
 
     void Update()
@@ -89,6 +100,7 @@ public class PlayerController : MonoBehaviour
         if(gameManager.underwater && gameManager.timeLeft == 0)
         {
             lives--;
+            StartCoroutine(FlashRed());
             gameManager.timeLeft = 5.0f;
             gameManager.setTimer();
         }
@@ -248,6 +260,7 @@ public class PlayerController : MonoBehaviour
             // Remove Lives
             //Debug.Log("Life Lost! Lives left:" + lives);
             lives--;
+            StartCoroutine(FlashRed());
             }
 
         }
@@ -282,9 +295,14 @@ public class PlayerController : MonoBehaviour
           }
      }
 
-     
+    IEnumerator FlashRed()
+    {
+        spriteRenderer.color = red;
+        yield return new WaitForSeconds(0.15f);
+        spriteRenderer.color = white;
+    }
 
-  }
+}
     
  
 
