@@ -23,7 +23,7 @@ public class DestroyEnemy : MonoBehaviour
             Destroy(gameObject);
             
         }
-        if (collision.gameObject.tag == "Platform") {
+        if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "EndLevel") {
             // Destroys projectile
             Destroy(gameObject);
             

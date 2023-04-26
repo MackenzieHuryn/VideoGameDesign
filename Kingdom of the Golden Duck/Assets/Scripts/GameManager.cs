@@ -36,10 +36,19 @@ public class GameManager : MonoBehaviour
     public GameObject o2Bar;
     private SpriteRenderer sprRendD;
     public GameObject diamond;
+    private SceneChange sceneChange;
+
+    void Awake()
+    {
+       
+        sceneChange = GameObject.Find("SceneControl").GetComponent<SceneChange>();
+
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+
         isGameActive = true;
         sprRend = o2Bar.GetComponent<SpriteRenderer>();
         sprRend.drawMode = SpriteDrawMode.Sliced;
@@ -54,8 +63,16 @@ public class GameManager : MonoBehaviour
         life1.SetActive(true);
         life2.SetActive(true);
         life3.SetActive(true);
+        regDuck = true;
+        uniDuck = false;
+        artDuck = false;
+        scubDuck = false;
+        PlayerController.lives = 3f;
+        EnemySpawn.fishSpawned = 0f;
+        EnemySpawn.badDuckSpawned = 0f;
         
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -114,17 +131,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameOver() {
-        isGameActive = false;
-        life1.SetActive(true);
-        life2.SetActive(true);
-        life3.SetActive(true);
-        regDuck = true;
-        uniDuck = false;
-        artDuck = false;
-        scubDuck = false;
-        PlayerController.lives = 3f;
-        EnemySpawn.fishSpawned = 0f;
-        EnemySpawn.badDuckSpawned = 0f;
+
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -142,7 +149,7 @@ public class GameManager : MonoBehaviour
         PlayerController.lives = 3f;
         EnemySpawn.fishSpawned = 0f;
         EnemySpawn.badDuckSpawned = 0f;
-        SceneManager.LoadScene(5);
+        sceneChange.LoadScene("CutScene");
     }
     public void setTimer(){
         if(scubDuck){
