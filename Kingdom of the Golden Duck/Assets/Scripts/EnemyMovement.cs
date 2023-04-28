@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public float speed;
+    public float outOfScreenSpeed;
     private Rigidbody2D enemyRb;
     private GameObject player;
     private Vector2 spawnPos;
@@ -14,8 +15,12 @@ public class EnemyMovement : MonoBehaviour
     // Range of y
     private float yFishMax = -1.54f;
     private float leftBound = -8.38f;
-    private float rightBound = 8.68f;
+    private float rightBound = 10.02f;
     private float belowBound = -4.15f;
+
+    // Control how many enemies can appear onscreen at a time.
+    //private float maxEnemySpawn = 1f;
+    public static float fishSpawned = 0f;
 
     
     // Start is called before the first frame update
@@ -31,11 +36,9 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         if (gameManager.isGameActive) {
+            // Bounds
             if (transform.position.y > yFishMax){
             transform.position = new Vector2(transform.position.x, yFishMax);
-            }
-            if (transform.position.x > rightBound){
-            transform.position = new Vector2(rightBound, transform.position.y);
             }
             if (transform.position.x < leftBound){
             transform.position = new Vector2(leftBound, transform.position.y);
@@ -43,11 +46,21 @@ public class EnemyMovement : MonoBehaviour
             if (transform.position.y < belowBound){
             transform.position = new Vector2(transform.position.x, belowBound);
             }
-            
 
+            
+            // Movement
+            // When the fish is on the screen it moves toward player
+            if(transform.position.x <= rightBound){
+            fishSpawned++;
             Vector2 lookDirection = (player.transform.position - transform.position);
-            //enemyRb.AddForce(lookDirection * speed);
             transform.Translate(lookDirection * speed);
+            }
+
+            // When the fish is not on the screen it moves with the screen
+            if (transform.position.x > rightBound){
+            transform.Translate(Vector2.left * Time.deltaTime * outOfScreenSpeed);
+            }
+    
          
         
         }
