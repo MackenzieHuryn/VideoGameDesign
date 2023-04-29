@@ -34,9 +34,8 @@ public class EnemySpawn : MonoBehaviour
     void Start()
     {
          gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        fishSpawned = 0f;
-         spawnEnemyDucks();
-         badDuckSpawned = 1f;
+      
+         
 
     }
 

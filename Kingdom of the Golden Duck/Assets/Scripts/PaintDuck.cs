@@ -11,7 +11,7 @@ public class PaintDuck : MonoBehaviour
     private GameObject player;
 
     // Floats for preventing space spam
-    private float spawnTimeInterval = 1f; // Interval between projectile spawns
+    private float spawnTimeInterval = 0.1f; // Interval between projectile spawns
     private float timerX; // Timer for the interval
 
 
@@ -31,7 +31,7 @@ public class PaintDuck : MonoBehaviour
         timerX += Time.deltaTime;
 
         if(GameManager.artDuck) {
-            if(EnemySpawn.fishSpawned >= 1f && timerX >= spawnTimeInterval && player.transform.position.y < -0.1181383f) {
+            if(EnemyMovement.fishSpawned >= 1f && timerX >= spawnTimeInterval && player.transform.position.y < -0.1181383f) {
                 // Project projectile when W pressed
                 if (Input.GetKeyDown(KeyCode.W)) {
                     Vector2 playerPosition = transform.position;
@@ -40,7 +40,7 @@ public class PaintDuck : MonoBehaviour
                 }
              }
 
-             if(EnemySpawn.badDuckSpawned == 1f && timerX >= spawnTimeInterval && player.transform.position.y >= -0.1181383f ) {
+             if(MoveLeft.badDuckSpawned >= 1f && timerX >= spawnTimeInterval && player.transform.position.y >= -0.1181383f ) {
                 // Project projectile when W pressed
                 if (Input.GetKeyDown(KeyCode.W)) {
                     Vector2 playerPosition = transform.position;
