@@ -120,13 +120,13 @@ public class PlayerController : MonoBehaviour
 
             
         } 
-
+        if(OnPlate && transform.position.x < leftBound){
+               transform.position = new Vector2(leftBound, transform.position.y - 1);
+           }
         if (transform.position.x < leftBound){
             transform.position = new Vector2(leftBound, transform.position.y);
         }
-        if(OnPlate && transform.position.x < leftBound){
-               transform.position = new Vector2(transform.position.x, transform.position.y - 1);
-           }
+        
         if ( transform.position.y > upBound){
              transform.position = new Vector2(transform.position.x, upBound);
         }
