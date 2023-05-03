@@ -15,6 +15,7 @@ public class MoveLeft : MonoBehaviour
     void Start() {
          gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
           badDuckSpawned = 0f;
+          timerX = 100f;
           spawnTimeInterval = 100f;
     }
      
@@ -24,15 +25,17 @@ public class MoveLeft : MonoBehaviour
     {
          if (gameManager.isGameActive) {
         transform.Translate(Vector2.left * Time.deltaTime * speed);
-          Debug.Log(badDuckSpawned);
-        // Start timer
-        timerX += Time.deltaTime;
 
-        if (gameObject.tag == "Enemy" && timerX <= spawnTimeInterval) {
+
+        if (gameObject.tag == "Enemy" && timerX>=spawnTimeInterval) {
           if(transform.position.x <= rightBound){
             badDuckSpawned++;
-            spawnTimeInterval = 0;
+            timerX = 0;
             }
+        }
+        if(transform.position.x <= rightBound){
+           // Start timer
+        timerX += Time.deltaTime;
         }
          }
     }

@@ -22,6 +22,9 @@ public class EnemyMovement : MonoBehaviour
     //private float maxEnemySpawn = 1f;
     public static float fishSpawned = 0f;
 
+    private float timerX; // Timer for the interval
+    private float spawnTimeInterval = 100f;
+
     
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,9 @@ public class EnemyMovement : MonoBehaviour
         enemyRb = GetComponent<Rigidbody2D>(); 
         player = GameObject.Find("Player");
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-       
+        fishSpawned = 0f;
+        timerX = 100f;
+        spawnTimeInterval = 100f;
     }
 
     // Update is called once per frame
@@ -50,11 +55,18 @@ public class EnemyMovement : MonoBehaviour
             
             // Movement
             // When the fish is on the screen it moves toward player
-            if(transform.position.x <= rightBound){
-            fishSpawned++;
+            if(transform.position.x <= rightBound ){
+                if (timerX>=spawnTimeInterval){
+                    fishSpawned++;
+                    timerX = 0;
+                }
             Vector2 lookDirection = (player.transform.position - transform.position);
             transform.Translate(lookDirection * speed);
             }
+            if(transform.position.x <= rightBound){
+             // Start timer
+            timerX += Time.deltaTime;
+             }
 
             // When the fish is not on the screen it moves with the screen
             if (transform.position.x > rightBound){

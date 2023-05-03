@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6193259405943110894}
   m_Layer: 0
   m_Name: Paint
-  m_TagString: Untagged
+  m_TagString: shoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
