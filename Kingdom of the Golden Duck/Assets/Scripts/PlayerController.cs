@@ -124,7 +124,9 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < leftBound){
             transform.position = new Vector2(leftBound, transform.position.y);
         }
-
+        if(OnPlate && transform.position.x < leftBound){
+               transform.position = new Vector2(transform.position.x, transform.position.y - 1);
+           }
         if ( transform.position.y > upBound){
              transform.position = new Vector2(transform.position.x, upBound);
         }
@@ -266,6 +268,7 @@ public class PlayerController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Platform" ){ 
            OnPlate = true;
+           
            //onPlatform();
            /*if (Input.GetKey(jumpReal)){
                
