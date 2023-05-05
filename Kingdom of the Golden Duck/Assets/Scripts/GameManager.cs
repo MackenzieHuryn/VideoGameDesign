@@ -14,6 +14,11 @@ public class GameManager : MonoBehaviour
     public static bool artDuck = false;
     public static bool scubDuck = false;
     
+    // Audio clip variables
+    public AudioClip bubblingSound;
+    private AudioSource gameAudio;
+    bool underWaterPlay;
+
 
     // GameObject variables
     private GameObject life1;
@@ -50,12 +55,16 @@ public class GameManager : MonoBehaviour
     {
 
         isGameActive = true;
+        underWaterPlay = false;
         sprRend = o2Bar.GetComponent<SpriteRenderer>();
         sprRend.drawMode = SpriteDrawMode.Sliced;
         sprRendD = diamond.GetComponent<SpriteRenderer>();
         sprRendD.drawMode = SpriteDrawMode.Sliced;
         //sprRend.size = new Vector2(1.0f, 1.0f);
         
+        // game Audio
+        gameAudio = GetComponent<AudioSource>();
+
         life1 = GameObject.Find("heart 1");
         life2 = GameObject.Find("heart 2");
         life3 = GameObject.Find("heart 3");
@@ -108,6 +117,12 @@ public class GameManager : MonoBehaviour
                 GameOver(); 
             }
             if(underwater){
+                //Check to make sure audio isn't already playing
+                if(underWaterPlay == false) {
+                    //Play Audio
+                gameAudio.Play();
+                underWaterPlay = true;
+                } 
                 if(scubDuck){
                     timeLeft = 10;
                 }
@@ -124,6 +139,8 @@ public class GameManager : MonoBehaviour
                     sprRendD.size = new Vector2(0f, 1.0f);
                 }
             }else{
+                gameAudio.Stop();
+                underWaterPlay = false;
                 sprRend.size = new Vector2(0f, 1.0f);
                 sprRendD.size = new Vector2(0f, 1.0f);
             }

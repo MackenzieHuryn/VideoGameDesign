@@ -7,9 +7,10 @@ public class Coin : MonoBehaviour
 
     public int value;
 
+
     void Start()
     {
-        
+    
     }
 
     void Update()

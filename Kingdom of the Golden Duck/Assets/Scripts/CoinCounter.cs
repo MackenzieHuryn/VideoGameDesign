@@ -12,6 +12,10 @@ public class CoinCounter : MonoBehaviour
     public TMP_Text coinText;
     public int currentCoins = 0;
 
+    // Audio clip variables
+    public AudioClip coinSound;
+    private AudioSource coinAudio;
+
     void Awake()
     {
         instance = this;
@@ -21,10 +25,14 @@ public class CoinCounter : MonoBehaviour
     void Start()
     {
         coinText.text = "       : " + currentCoins.ToString();
+        // Player Audio
+        coinAudio = GetComponent<AudioSource>();
     }
 
     public void IncreaseCoins(int v)
     {
+        //Play Audio
+            coinAudio.PlayOneShot(coinSound, 0.5f);
         currentCoins += v;
         coinText.text = "       : " + currentCoins.ToString();
     }

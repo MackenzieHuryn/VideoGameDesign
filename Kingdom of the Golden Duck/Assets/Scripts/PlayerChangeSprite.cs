@@ -9,9 +9,19 @@ public class PlayerChangeSprite : MonoBehaviour
     private GameManager gameManager;
     public ButtonManager buttonManager;
     public CoinCounter coinCounter;
+
+ // Audio clip variables
+    public AudioClip unicornDuckSound;
+    public AudioClip paintDuckSound;
+    public AudioClip scubaDuckSound;
+    private AudioSource playerAudio;
+
+
     void Awake(){
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         GameManager.regDuck = true;
+        // Player Audio
+        playerAudio = GetComponent<AudioSource>();
     }
     
     void Update() {
@@ -22,6 +32,8 @@ public class PlayerChangeSprite : MonoBehaviour
             GameManager.scubDuck = false;
             GameManager.uniDuck = true;
             ChangeSprite(0);
+            //Play Audio
+            playerAudio.PlayOneShot(unicornDuckSound, 0.5f);
             Debug.Log("The Duck's costume is Unicorn :" + GameManager.uniDuck);
             buttonManager.UnicornActivation();
         }
@@ -36,6 +48,8 @@ public class PlayerChangeSprite : MonoBehaviour
         if (Input.GetKeyDown (KeyCode.Alpha2) && buttonManager.PDB && coinCounter.currentCoins >= 5) {
             Debug.Log("2-artist");
             ChangeSprite(1);
+            //Play Audio
+            playerAudio.PlayOneShot(paintDuckSound, 0.5f);
             GameManager.regDuck = false;
             GameManager.uniDuck = false;
             GameManager.scubDuck = false;
@@ -47,6 +61,8 @@ public class PlayerChangeSprite : MonoBehaviour
             Debug.Log("3-scuba");
 
             ChangeSprite(2);
+            //Play Audio
+            playerAudio.PlayOneShot(scubaDuckSound, 0.5f);
             gameManager.timeLeft = gameManager.timeLeft + 10;
             gameManager.scubaAir = false;
             gameManager.setTimer();
