@@ -34,6 +34,16 @@ public class PlayerController : MonoBehaviour
     private PlayerChangeSprite playerChangeSprite;
     public bool OnPlate = false;
 
+     // Audio clip variables
+    public AudioClip bubbleSound;
+    public AudioClip eggSound;
+    public AudioClip paintSound;
+    public AudioClip jumpSound;
+    public AudioClip lifeLostSound;
+    private AudioSource playerAudio;
+
+    
+
 
     // For player color change/flashing
     private SpriteRenderer spriteRenderer;
@@ -77,6 +87,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        // Player Audio
+        playerAudio = GetComponent<AudioSource>();
+
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         red = new Color(1, 0.4f, 0.4f, 1);
         white = new Color(1, 1, 1, 1);
@@ -101,6 +114,8 @@ public class PlayerController : MonoBehaviour
         {
             lives--;
             StartCoroutine(FlashRed());
+            //Play Audio
+            playerAudio.PlayOneShot(lifeLostSound, 0.5f); 
             gameManager.timeLeft = 5.0f;
             gameManager.setTimer();
         }
@@ -161,13 +176,18 @@ public class PlayerController : MonoBehaviour
             jumping = true;
             rb.gravityScale = gravScale;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);    
-        
+            //Play Audio 
+            playerAudio.PlayOneShot(jumpSound, 0.5f);
+             
             //doJump();
 
         } else if(jumping == false && Input.GetKey(jumpReal) && (transform.position.y >= waterlineY)){
             jumping = true;
             rb.gravityScale = gravScale;
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);    
+            rb.velocity = new Vector2(rb.velocity.x, jumpPower);  
+            //Play Audio
+            playerAudio.PlayOneShot(jumpSound, 0.5f);
+              
             //doJump();
 
         } 
@@ -263,6 +283,8 @@ public class PlayerController : MonoBehaviour
             //Debug.Log("Life Lost! Lives left:" + lives);
             lives--;
             StartCoroutine(FlashRed());
+            //Play Audio
+            playerAudio.PlayOneShot(lifeLostSound, 0.5f);
             }
 
         }

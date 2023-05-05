@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class DestroyEnemy : MonoBehaviour
 {
+
     //runs this code when the projectile collides with an enemy
     private void OnCollisionEnter2D(Collision2D collision) {
         Debug.Log("Collision");
+
+
         if (collision.gameObject.tag == "EnemyFish") { 
             EnemyMovement.fishSpawned--;
             // Destroys object it collides with
@@ -21,8 +24,8 @@ public class DestroyEnemy : MonoBehaviour
             MoveLeft.badDuckSpawned--;
             // Destroys projectile
             Destroy(gameObject);
-            
         }
+
         if (collision.gameObject.tag == "Platform" || collision.gameObject.tag == "EndLevel") {
             // Destroys projectile
             Destroy(gameObject);

@@ -7,6 +7,9 @@ public class ProjectileLauncher : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject bubblePrefab;
     private GameManager gameManager;
+    public AudioClip bubbleSound;
+    public AudioClip eggSound;
+    private AudioSource projectileAudio;
 
     // Floats for preventing space spam
     private float spawnTimeInterval = 1f; // Interval between projectile spawns
@@ -20,6 +23,8 @@ public class ProjectileLauncher : MonoBehaviour
         timerX = spawnTimeInterval;
 
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        // ProjectileAudio
+        projectileAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,7 +41,7 @@ public class ProjectileLauncher : MonoBehaviour
                 Instantiate(projectilePrefab, playerPosition, projectilePrefab.transform.rotation);
                 timerX = 0;
                     //Play Audio
-                    //playerAudio.PlayOneShot(projectileSound, 0.5f);
+                    projectileAudio.PlayOneShot(eggSound, 0.5f);
                 }
             }
              if(GameManager.scubDuck == true && timerX >= spawnTimeInterval) {
@@ -45,7 +50,7 @@ public class ProjectileLauncher : MonoBehaviour
                 Instantiate(bubblePrefab, playerPosition, bubblePrefab.transform.rotation);
                 timerX = 0;
                     //Play Audio
-                    //playerAudio.PlayOneShot(projectileSound, 0.5f);
+                    projectileAudio.PlayOneShot(bubbleSound, 0.5f);
                 }
             }
         }
