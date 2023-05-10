@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 876893917325061026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.1345325, y: 0.9741917, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.4811321, g: 0.2208971, b: 0.47379255, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 735bc214ba62fae4c971f60a5f245b20, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,9 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dfd09c6322c89b49869b974dd0712df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbleSound: {fileID: 8300000, guid: 1f99249e9e5c9b94990a04eac63b608b, type: 3}
-  eggSound: {fileID: 8300000, guid: 0f2128d7108d2874caf4673ce7d98ef6, type: 3}
-  paintSound: {fileID: 8300000, guid: e1066f3b92f07fe4c925a0afb421ec89, type: 3}
 --- !u!61 &940785841
 BoxCollider2D:
   m_ObjectHideFlags: 0
