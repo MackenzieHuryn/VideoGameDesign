@@ -7,6 +7,7 @@ public class DestroyOutOfBounds : MonoBehaviour
     //private float rightBound = 10f;
     private float leftBound = -10f;
     private float rightBound = 10f;
+    private float upBound = 6f;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +21,12 @@ public class DestroyOutOfBounds : MonoBehaviour
 
         if (transform.position.x > rightBound) {
             if(gameObject.tag == "shoot") {
+                Destroy(gameObject);
+            }
+        }
+
+        if (GameManager.artDuck == true) {
+            if (transform.position.y > upBound){
                 Destroy(gameObject);
             }
         }
