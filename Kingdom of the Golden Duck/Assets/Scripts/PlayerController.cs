@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public bool isGrounded = false;
     int editorValueJumps;
-
+    public float lifeTime = 0f;
     //private HashSet<GameObject> touching = new HashSet<GameObject>();
     void Awake()
     {
@@ -97,6 +97,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if(lifeTime > 0){
+            lifeTime = lifeTime - Time.deltaTime;
+        }else{
+            lifeTime = 0f;
+        }
         if (gameManager.isGameActive) {
             if(transform.position.y < waterlineY - 1.2){
 
@@ -262,7 +267,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //runs this code when the player collides with an enemy, platform, or the golden duck
-    private void OnCollisionEnter2D(Collision2D collision) {
+    public void OnCollisionEnter2D(Collision2D collision) {
         //Debug.Log("Collision");
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyFish"){ 
             if(GameManager.uniDuck){
@@ -281,13 +286,17 @@ public class PlayerController : MonoBehaviour
             }else{
             // Remove Lives
             //Debug.Log("Life Lost! Lives left:" + lives);
-            lives--;
+                if(lifeTime == 0){  
+                    lives--;
+                    lifeTime = 1f;
+                }
+            }
             StartCoroutine(FlashRed());
             //Play Audio
             playerAudio.PlayOneShot(lifeLostSound, 0.5f);
             }
 
-        }
+        
         if (collision.gameObject.tag == "Platform" ){ 
            OnPlate = true;
            
