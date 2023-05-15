@@ -290,12 +290,12 @@ public class PlayerController : MonoBehaviour
                     lives--;
                     lifeTime = 1f;
                 }
-            }
+            
             StartCoroutine(FlashRed());
             //Play Audio
             playerAudio.PlayOneShot(lifeLostSound, 0.5f);
             }
-
+        }
         
         if (collision.gameObject.tag == "Platform" ){ 
            OnPlate = true;
