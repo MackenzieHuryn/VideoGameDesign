@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector2(transform.position.x, waterlineY);
         }
       
-        if((OnPlate == true) && Input.GetKey(jumpReal)){
+        if((OnPlate == true) && Input.GetKey(jumpReal) && !gameManager.underwater){
             jumping = true;
             rb.gravityScale = gravScale;
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);    
