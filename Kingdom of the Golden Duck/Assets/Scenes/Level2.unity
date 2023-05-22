@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -550,7 +554,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (5)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -924,7 +928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (1)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -1728,7 +1732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252653457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.27, y: 0.44, z: 0.10425631}
+  m_LocalPosition: {x: 19.269995, y: 0.44, z: 0.10425631}
   m_LocalScale: {x: 19.465996, y: 16.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2370,6 +2374,10 @@ PrefabInstance:
     - target: {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_Name
       value: Coin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
@@ -4332,6 +4340,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -4533,6 +4545,10 @@ PrefabInstance:
     - target: {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
@@ -5422,6 +5438,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -5760,6 +5780,10 @@ PrefabInstance:
     - target: {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_Name
       value: Coin (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
@@ -6104,7 +6128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (8)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -7106,6 +7130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -7179,6 +7207,10 @@ PrefabInstance:
     - target: {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_Name
       value: Coin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
@@ -8103,7 +8135,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (7)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -8363,7 +8395,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: b377023fe7f165547921613a1ba4171b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -8655,7 +8687,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (3)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -8793,7 +8825,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.32156864, g: 0.32156864, b: 0.32156864, a: 1}
   m_FlipX: 0
@@ -9268,6 +9300,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin
       objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -9608,7 +9644,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (9)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -9895,7 +9931,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (4)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -10026,7 +10062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coinText: {fileID: 1920033872}
   currentCoins: 0
-  coinSound: {fileID: 8300000, guid: 11b8d73f7d2e1554193e36251d8ed67a, type: 3}
+  coinSound: {fileID: 8300000, guid: 5e6efe554bbfe2f4eb9b8f5fa994dca2, type: 3}
 --- !u!81 &1523823557
 AudioListener:
   m_ObjectHideFlags: 0
@@ -10460,7 +10496,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: b377023fe7f165547921613a1ba4171b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -10565,7 +10601,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (6)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -10955,7 +10991,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (10)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -11193,7 +11229,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (2)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -11736,6 +11772,10 @@ PrefabInstance:
     - target: {fileID: 3981947517807377992, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981947517807377998, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981947517807377999, guid: f3b191ec2cbe3449b9ac4b8842025dbc, type: 3}
       propertyPath: m_RootOrder
@@ -12511,7 +12551,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 714433209033158757, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_Name
-      value: EnemyDuck (1)
+      value: EnemyDuck
       objectReference: {fileID: 0}
     - target: {fileID: 6291805235997644672, guid: b9a7a9c6fa2964b448101c178748ebfa, type: 3}
       propertyPath: m_RootOrder
@@ -12739,7 +12779,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: b377023fe7f165547921613a1ba4171b, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
