@@ -12,5 +12,6 @@ public static class GoldenDuckCollection
     public static int L2Duck = 0;
     public static int L3Duck = 0;
     public static int L4Duck = 0;
+    public static int L5Duck = 0;
 
 }

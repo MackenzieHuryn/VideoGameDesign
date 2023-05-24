@@ -21,6 +21,10 @@ public class LevelActivate : MonoBehaviour
     public GameObject GreyDuck4;
     public GameObject GoldenDuck4;
 
+    public GameObject BlockedDuck5;
+    public GameObject GreyDuck5;
+    public GameObject GoldenDuck5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +63,14 @@ public class LevelActivate : MonoBehaviour
         {
             GreyDuck4.SetActive(false);
             GoldenDuck4.SetActive(true);
+            BlockedDuck5.SetActive(false);
+            GreyDuck5.SetActive(true);
+        }
+
+        if (GoldenDuckCollection.L5Duck > 0)
+        {
+            GreyDuck5.SetActive(false);
+            GoldenDuck5.SetActive(true);
         }
     }
 

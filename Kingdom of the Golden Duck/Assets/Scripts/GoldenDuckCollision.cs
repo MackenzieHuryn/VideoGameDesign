@@ -43,6 +43,11 @@ public class GoldenDuckCollision : MonoBehaviour
                 GoldenDuckCollection.L4Duck++;
             }
 
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Level5"))
+            {
+                GoldenDuckCollection.L5Duck++;
+            }
+
         }
 
     }
