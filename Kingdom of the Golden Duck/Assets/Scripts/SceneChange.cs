@@ -7,6 +7,7 @@ public class SceneChange : MonoBehaviour
 {
 
     private string scene;
+
     public void LoadScene(string sceneName)
     {
         scene = sceneName;
