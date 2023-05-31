@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-       
+        
         sceneChange = GameObject.Find("SceneControl").GetComponent<SceneChange>();
 
     }
