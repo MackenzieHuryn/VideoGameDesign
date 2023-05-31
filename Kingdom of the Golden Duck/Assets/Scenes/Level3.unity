@@ -639,7 +639,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162123295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0.10425631}
+  m_LocalPosition: {x: 0, y: 0.22, z: 0.10425631}
   m_LocalScale: {x: 19.465996, y: 17.17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -658,7 +658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e83882f61da5d4f92d329c43ce5c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yPos: 1
+  yPos: 0.22
   repeatPos: -19.47
   xPosition: 36.2
 --- !u!212 &162123298
@@ -1758,8 +1758,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 252653457}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.27, y: 1, z: 0.10425631}
-  m_LocalScale: {x: 19.465996, y: 14.214373, z: 1}
+  m_LocalPosition: {x: 19.27, y: 0.22, z: 0.10425631}
+  m_LocalScale: {x: 19.465996, y: 17.17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 922961571}
@@ -1777,7 +1777,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e83882f61da5d4f92d329c43ce5c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yPos: 1
+  yPos: 0.22
   repeatPos: -19.47
   xPosition: 36.2
 --- !u!212 &252653460
@@ -6575,7 +6575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922961569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.73, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10779,7 +10779,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4d01dca8cc984c5429f90d4489e8547c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13160,8 +13160,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2065345528}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.47, y: 1, z: 0.10425631}
-  m_LocalScale: {x: 19.465996, y: 14.214373, z: 1}
+  m_LocalPosition: {x: -19.47, y: 0.22, z: 0.10425631}
+  m_LocalScale: {x: 19.465996, y: 17.17, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 922961571}
@@ -13179,7 +13179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e83882f61da5d4f92d329c43ce5c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  yPos: 1
+  yPos: 0.22
   repeatPos: -19.47
   xPosition: 36.2
 --- !u!212 &2065345531
