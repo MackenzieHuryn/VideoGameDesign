@@ -661,6 +661,7 @@ MonoBehaviour:
   yPos: 0.22
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &162123298
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -760,7 +761,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017648458, y: 0.049415752}
+  m_Offset: {x: 0.04150562, y: 0.049415752}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -771,7 +772,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68232715, y: 0.09657976}
+  m_Size: {x: 0.56401896, y: 0.09657976}
   m_EdgeRadius: 0
 --- !u!50 &167568805
 Rigidbody2D:
@@ -1076,7 +1077,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640942370}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &175515291
 BoxCollider2D:
@@ -1356,6 +1357,7 @@ MonoBehaviour:
   yPos: -1.895
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!61 &199338050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1780,6 +1782,7 @@ MonoBehaviour:
   yPos: 0.22
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &252653460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2033,6 +2036,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &269770742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2625,6 +2629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &362258238
 Transform:
   m_ObjectHideFlags: 0
@@ -2683,7 +2688,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640942370}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &379489089
 BoxCollider2D:
@@ -3397,6 +3402,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &465626317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3637,6 +3643,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &491253455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4076,12 +4083,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603772814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.095, y: 0.288, z: 0}
+  m_LocalPosition: {x: 14.095001, y: 0.288, z: 0}
   m_LocalScale: {x: 0.58284, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640942370}
-  m_RootOrder: 16
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &603772816
 BoxCollider2D:
@@ -4096,7 +4103,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017648458, y: 0.049415752}
+  m_Offset: {x: -0.16093236, y: 0.049415752}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4107,7 +4114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68232715, y: 0.09657976}
+  m_Size: {x: 0.39575934, y: 0.09657976}
   m_EdgeRadius: 0
 --- !u!50 &603772817
 Rigidbody2D:
@@ -4926,6 +4933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &669009719
 Transform:
   m_ObjectHideFlags: 0
@@ -6567,6 +6575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &922961571
 Transform:
   m_ObjectHideFlags: 0
@@ -6949,6 +6958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &965781973
 Transform:
   m_ObjectHideFlags: 0
@@ -7015,6 +7025,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &970153141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7222,7 +7233,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1640942370}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &995145507
 BoxCollider2D:
@@ -8177,6 +8188,7 @@ MonoBehaviour:
   yPos: -1.895
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!61 &1155597962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8590,6 +8602,7 @@ MonoBehaviour:
   yPos: -1.895
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!61 &1203141363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9141,6 +9154,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &1268736981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11148,10 +11162,10 @@ Transform:
   - {fileID: 1157075217}
   - {fileID: 2057357531}
   - {fileID: 411398023}
-  - {fileID: 603772815}
   - {fileID: 995145506}
   - {fileID: 379489088}
   - {fileID: 175515290}
+  - {fileID: 603772815}
   - {fileID: 1997233425}
   - {fileID: 167568803}
   - {fileID: 707305112}
@@ -12532,6 +12546,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &1913934702
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12764,7 +12779,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017648458, y: 0.049415752}
+  m_Offset: {x: -0.06288424, y: 0.049415752}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -12775,7 +12790,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.68232715, y: 0.09657976}
+  m_Size: {x: 0.5570596, y: 0.09657976}
   m_EdgeRadius: 0
 --- !u!50 &1997233427
 Rigidbody2D:
@@ -12890,6 +12905,7 @@ MonoBehaviour:
   isGameActive: 0
   o2Bar: {fileID: 847567039}
   diamond: {fileID: 871316246}
+  startS: 0
 --- !u!4 &2034652823
 Transform:
   m_ObjectHideFlags: 0
@@ -13182,6 +13198,7 @@ MonoBehaviour:
   yPos: 0.22
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &2065345531
 SpriteRenderer:
   m_ObjectHideFlags: 0

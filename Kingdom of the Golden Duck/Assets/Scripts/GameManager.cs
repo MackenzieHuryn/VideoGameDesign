@@ -42,11 +42,14 @@ public class GameManager : MonoBehaviour
     private SpriteRenderer sprRendD;
     public GameObject diamond;
     private SceneChange sceneChange;
+    private RepeatBackground repeatBackground;
+    public bool startS = false;
 
     void Awake()
     {
         
         sceneChange = GameObject.Find("SceneControl").GetComponent<SceneChange>();
+        //repeatBackground = GameObject.Find("RepeatBackground").GetComponent<RepeatBackground>();
 
     }
 
@@ -80,13 +83,14 @@ public class GameManager : MonoBehaviour
         EnemySpawn.fishSpawned = 0f;
         EnemySpawn.badDuckSpawned = 0f;
         
+        
     }
     
 
     // Update is called once per frame
     void Update()
     {   
-        
+        startS = true;
         
         if(isGameActive) {
             

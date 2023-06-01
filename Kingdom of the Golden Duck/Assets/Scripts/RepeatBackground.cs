@@ -10,24 +10,31 @@ public class RepeatBackground : MonoBehaviour
     public float repeatPos;
     public float xPosition;
     private GameManager gameManager;
+    public bool startScrolling = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        startPos = transform.position; // Establish default starting position 
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        
-        spawnPos = new Vector2( xPosition, yPos );  
+            
+            gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+    
+            
+         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.isGameActive) {
-        // If background moves left by its repeat width, move it back to start position
-        if (transform.position.x < repeatPos) {
-            transform.position = spawnPos;
+        if(gameManager.startS && !startScrolling){
+            startPos = transform.position; // Establish default starting position 
+            spawnPos = new Vector2( xPosition, yPos ); 
+            startScrolling = true;
         }
+        if (startScrolling) {
+        // If background moves left by its repeat width, move it back to start position
+            if (transform.position.x < repeatPos) {
+                transform.position = spawnPos;
+            }
         }
     }
 }
