@@ -24,6 +24,6 @@ public class SceneChange : MonoBehaviour
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(0.7f);
-         SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
 }
