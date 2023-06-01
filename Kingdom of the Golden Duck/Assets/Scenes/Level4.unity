@@ -1482,6 +1482,7 @@ MonoBehaviour:
   yPos: 1
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &162123298
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1787,6 +1788,7 @@ MonoBehaviour:
   yPos: -1.895
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!61 &199338050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2254,6 +2256,7 @@ MonoBehaviour:
   yPos: 1
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &252653460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2508,6 +2511,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &269770742
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3230,6 +3234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &362258238
 Transform:
   m_ObjectHideFlags: 0
@@ -4028,6 +4033,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &465626317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4263,6 +4269,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &491253455
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5675,6 +5682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &669009719
 Transform:
   m_ObjectHideFlags: 0
@@ -7755,6 +7763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &922961571
 Transform:
   m_ObjectHideFlags: 0
@@ -7876,6 +7885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  moving: 0
 --- !u!4 &965781973
 Transform:
   m_ObjectHideFlags: 0
@@ -7942,6 +7952,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &970153141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9911,6 +9922,7 @@ MonoBehaviour:
   yPos: -1.895
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!61 &1155597962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10471,6 +10483,7 @@ MonoBehaviour:
   yPos: -1.895
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!61 &1203141363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10735,6 +10748,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &1268736981
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12424,11 +12438,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 796c472729dfaa84faa8ec7be5bee3a9, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15121,6 +15135,7 @@ MonoBehaviour:
   yPos: 1.73
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &1913934702
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15697,6 +15712,7 @@ MonoBehaviour:
   isGameActive: 0
   o2Bar: {fileID: 847567039}
   diamond: {fileID: 871316246}
+  startS: 0
 --- !u!4 &2034652823
 Transform:
   m_ObjectHideFlags: 0
@@ -16046,6 +16062,7 @@ MonoBehaviour:
   yPos: 1
   repeatPos: -19.47
   xPosition: 36.2
+  startScrolling: 0
 --- !u!212 &2065345531
 SpriteRenderer:
   m_ObjectHideFlags: 0
