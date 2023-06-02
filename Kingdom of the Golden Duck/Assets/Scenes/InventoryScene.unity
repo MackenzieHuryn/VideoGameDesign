@@ -1254,7 +1254,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The scuba duck: Save yourself from drowning underwater!'
+  m_text: 'The scuba duck: Save yourself from drowning underwater!
+
+    Duration:
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1736,7 +1739,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The paint duck: Press "W" to flawlessly splatter your enemies with paint!'
+  m_text: 'The paint duck: Press "W" to flawlessly splatter your enemies with paint!
+
+    Duration:
+    10'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -2221,7 +2227,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'The unicorn duck: Gallop to this powerup to destroy your enemies with
-    your magic of invincibility!'
+    your magic of invincibility!
+
+    Duration: 5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}

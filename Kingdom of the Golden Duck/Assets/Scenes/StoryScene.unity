@@ -985,8 +985,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Help Duck journey through environments, from a jungle to the ocean, by
-    selecting costumes to fight in, and collecting power-ups and coins along the
+  m_text: 'Help Duck journey through environments, from a jungle cave to the desert,
+    by selecting costumes to fight in, and collecting power-ups and coins along the
     way.
 
 '
