@@ -40,7 +40,6 @@ public class LevelActivate : MonoBehaviour
             GoldenDuck1.SetActive(true);
             BlockedDuck2.SetActive(false);
             GreyDuck2.SetActive(true);
-            Debug.Log("golden duck 1");
         }
 
         if (GoldenDuckCollection.L2Duck > 0)
@@ -48,6 +47,7 @@ public class LevelActivate : MonoBehaviour
             GoldenDuck2.SetActive(true);
             BlockedDuck3.SetActive(false);
             GreyDuck3.SetActive(true);
+            Debug.Log("golden 2. grey 3");
         }
 
         if (GoldenDuckCollection.L3Duck > 0)
